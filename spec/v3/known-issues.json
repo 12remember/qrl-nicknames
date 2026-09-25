@@ -1,0 +1,4 @@
+{
+  "note": "Content-screening findings consciously accepted for spec v3. Removing a word would rename every address, so an accepted finding stays until the next major version. Empty by design: the word lists were authored through the screener, and the tag's digit tail cannot form a word.",
+  "accepted": []
+}

@@ -1,0 +1,33 @@
+{
+  "name": "qrl-nicknames",
+  "version": "3.0.0",
+  "description": "Readable, deterministic names for QRL addresses. Same address, same name, in every project.",
+  "keywords": ["qrl", "blockchain", "address", "nickname", "human-readable", "deterministic"],
+  "license": "MIT",
+  "author": "Quantascan",
+  "homepage": "https://github.com/12remember/qrl-nicknames#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/12remember/qrl-nicknames.git",
+    "directory": "js"
+  },
+  "bugs": "https://github.com/12remember/qrl-nicknames/issues",
+  "type": "module",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
+  "files": ["src", "README.md", "LICENSE"],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/vectors.test.js",
+    "prepack": "node -e \"require('fs').copyFileSync('../LICENSE','LICENSE')\""
+  }
+}

@@ -1,0 +1,1775 @@
+{
+ "spec": "qrl-nicknames",
+ "version": 3,
+ "note": "Conformance suite. An implementation is correct only if it reproduces every `name` exactly and rejects every `invalid` input. `sha256` and `n` are the intermediate values, included to make a failing port easy to debug.",
+ "vectors": [
+  {
+   "input": "Qc0e6dd0e844e0048dcb0bd3fdcc44a970beca38d",
+   "name": "Cobalt Caddisfly tk856",
+   "slug": "cobalt-caddisfly-tk856",
+   "adjective": "Cobalt",
+   "creature": "Caddisfly",
+   "tag": "tk856",
+   "sha256": "51acd10309e91fe740eda7421b9efdf041a455e2d6cb17f040c8fe3ca8eacba7",
+   "n": 279536485452711,
+   "note": "QRL 2.0 address (the README example)"
+  },
+  {
+   "input": "QC0E6DD0E844E0048DCB0BD3FDCC44A970BECA38D",
+   "name": "Cobalt Caddisfly tk856",
+   "slug": "cobalt-caddisfly-tk856",
+   "adjective": "Cobalt",
+   "creature": "Caddisfly",
+   "tag": "tk856",
+   "sha256": "51acd10309e91fe740eda7421b9efdf041a455e2d6cb17f040c8fe3ca8eacba7",
+   "n": 279536485452711,
+   "note": "Uppercase input: MUST equal the lowercase form"
+  },
+  {
+   "input": "Q26052a8ac2efbf817f7b1eda761362e6a9291b9a",
+   "name": "Blunt Guanaco rj622",
+   "slug": "blunt-guanaco-rj622",
+   "adjective": "Blunt",
+   "creature": "Guanaco",
+   "tag": "rj622",
+   "sha256": "dad0dc5f40619cbfe00a251aca7d0119b4e35e06f26f5657bca7100897965a11",
+   "n": 17629088995857
+  },
+  {
+   "input": "Q4c8f7ccf367db75fb45fee78be1577436276d6f3",
+   "name": "Rustling Toucan bc228",
+   "slug": "rustling-toucan-bc228",
+   "adjective": "Rustling",
+   "creature": "Toucan",
+   "tag": "bc228",
+   "sha256": "1a941a14f55e0e61d45351c7479918cd540cfe0bc43c979b2fb75b0020b1f7d0",
+   "n": 100056106661840
+  },
+  {
+   "input": "Qf988873a03af5baf03f539c9ff25dfc2a3b749c1",
+   "name": "Loyal Orbweaver i5688",
+   "slug": "loyal-orbweaver-i5688",
+   "adjective": "Loyal",
+   "creature": "Orbweaver",
+   "tag": "i5688",
+   "sha256": "41832182320bbcc50a2b1f6d8b46256f720f8766c65c61d57a1d5369b474de0e",
+   "n": 91713464229390
+  },
+  {
+   "input": "Q195f6e31f4f01752e012031a344d14da9798721c",
+   "name": "Nosy Weaver mt275",
+   "slug": "nosy-weaver-mt275",
+   "adjective": "Nosy",
+   "creature": "Weaver",
+   "tag": "mt275",
+   "sha256": "803e4400d1d2bae98e34a6f5d113b2cca5e1201993094c8f6e3261d115baaf2d",
+   "n": 107550640615213
+  },
+  {
+   "input": "Q77f019dde378a566f4a38c532c04c548ce2e6ef3",
+   "name": "Blocky Seahorse h7667",
+   "slug": "blocky-seahorse-h7667",
+   "adjective": "Blocky",
+   "creature": "Seahorse",
+   "tag": "h7667",
+   "sha256": "7ec3c283a846c114e1d502e4eb85b7fd5d22c5001e385a4010102ec9d3d0a8d3",
+   "n": 51444376971475
+  },
+  {
+   "input": "Qf0c570e58cec4d0621e86f2546ac91fde474cb98",
+   "name": "Pudgy Shrimp b8664",
+   "slug": "pudgy-shrimp-b8664",
+   "adjective": "Pudgy",
+   "creature": "Shrimp",
+   "tag": "b8664",
+   "sha256": "5f7e0f868ce7da488b286587dcee99073e70ed001d6a01eea04be549e0db26b0",
+   "n": 252105467831984
+  },
+  {
+   "input": "Qecc8d4e5d079efcb9b13bb8278773245332365f8",
+   "name": "Blocky Crow i2784",
+   "slug": "blocky-crow-i2784",
+   "adjective": "Blocky",
+   "creature": "Crow",
+   "tag": "i2784",
+   "sha256": "7ff63c64474bfe139d8350ab18bbb87bc25536f6a3dd4dcc1d3c3d6b842be8de",
+   "n": 67531988265182
+  },
+  {
+   "input": "Q4f90398b1e7a903ac62d5787c020372468ba1595",
+   "name": "Stout Damselfish hd927",
+   "slug": "stout-damselfish-hd927",
+   "adjective": "Stout",
+   "creature": "Damselfish",
+   "tag": "hd927",
+   "sha256": "aefb49bd3cab275596589e5f2f6af0a47316b4126919b7291f8c728e33cf6183",
+   "n": 125955080151427
+  },
+  {
+   "input": "Q4ef401806f02b0b2d4abe48946da0263092ab4fb",
+   "name": "Steamy Salmon ev923",
+   "slug": "steamy-salmon-ev923",
+   "adjective": "Steamy",
+   "creature": "Salmon",
+   "tag": "ev923",
+   "sha256": "ed7c4af71a3b22b91d4d1f53ea41cf36564dccee0caac7e48e7ef48f324216a4",
+   "n": 268895860692644
+  },
+  {
+   "input": "Q39c9a4da25c8192cfc8c70d7d6b7ddd98c5fe91c",
+   "name": "Snuffling Redwing 2u524",
+   "slug": "snuffling-redwing-2u524",
+   "adjective": "Snuffling",
+   "creature": "Redwing",
+   "tag": "2u524",
+   "sha256": "58fbfd6d5bde7eccc75a8d364f64e92a5333f8e90f620711eb8745072c34f8cb",
+   "n": 75897108756683
+  },
+  {
+   "input": "Q51501c954019ab704a9251d2a925210485bc5227",
+   "name": "Goofy Isopod bn632",
+   "slug": "goofy-isopod-bn632",
+   "adjective": "Goofy",
+   "creature": "Isopod",
+   "tag": "bn632",
+   "sha256": "f7abed78035af4ce282d9c477cef0b1c093d40f9dbc31d511dc25818c0dc42d9",
+   "n": 96863338119897
+  },
+  {
+   "input": "Q02fd4c20dc188adf4ef119d7a88e9c5ee0d8812c",
+   "name": "Spindly Humpback v6247",
+   "slug": "spindly-humpback-v6247",
+   "adjective": "Spindly",
+   "creature": "Humpback",
+   "tag": "v6247",
+   "sha256": "94493a8b7660f56e7e07063abfde0878ab2a358f70d7413b4dcfcea1c99a27eb",
+   "n": 227194267379691
+  },
+  {
+   "input": "Qab0992aeb8d3661cc4a27fd7f167042be3839a99",
+   "name": "Blinking Wahoo e2896",
+   "slug": "blinking-wahoo-e2896",
+   "adjective": "Blinking",
+   "creature": "Wahoo",
+   "tag": "e2896",
+   "sha256": "631903a46c50cfe5574fba862a03f36cfb97d1e61396957a960af67d824df254",
+   "n": 271018917491284
+  },
+  {
+   "input": "Q66db610211b4615f3f10c1cc738330480c1cebe3",
+   "name": "Vivid Monitor 57622",
+   "slug": "vivid-monitor-57622",
+   "adjective": "Vivid",
+   "creature": "Monitor",
+   "tag": "57622",
+   "sha256": "5e3cbdab3a0c2a4186dfa52d0c5e8eecea6320330c4824dedba44c09dddfa2a7",
+   "n": 83605260837543
+  },
+  {
+   "input": "Qc785934dd7de2bf44279cf2ff756ceea8bf52f03",
+   "name": "Silver Moose ae226",
+   "slug": "silver-moose-ae226",
+   "adjective": "Silver",
+   "creature": "Moose",
+   "tag": "ae226",
+   "sha256": "0d93a2f42a853b6638fd058e0ec7951047c384f8623073319b9f960040024da9",
+   "n": 164927818059177
+  },
+  {
+   "input": "Qaa1874acda0feafec38d89496fb0e1fb0aeaee8c",
+   "name": "Noble Ammonite u3775",
+   "slug": "noble-ammonite-u3775",
+   "adjective": "Noble",
+   "creature": "Ammonite",
+   "tag": "u3775",
+   "sha256": "84b778386a0bc1ef5f8e92f6527a31efe355744bbcde834501f871db9955141c",
+   "n": 125187984266268
+  },
+  {
+   "input": "Q0e6bfb8928931aa575e2f407011b36e3f2bd8864",
+   "name": "Giddy Conger er544",
+   "slug": "giddy-conger-er544",
+   "adjective": "Giddy",
+   "creature": "Conger",
+   "tag": "er544",
+   "sha256": "55d3c58186338dc57e52fe93a936fead792d634c388d058f546bed26f2529c67",
+   "n": 260751530040423
+  },
+  {
+   "input": "Q28983f63d82a7795b06906c6e0f00b8f675cbc83",
+   "name": "Tender Ling ab443",
+   "slug": "tender-ling-ab443",
+   "adjective": "Tender",
+   "creature": "Ling",
+   "tag": "ab443",
+   "sha256": "47a599e044f748d99b382d66804760dfc1910ed43c9214d9f7040ca4104861f1",
+   "n": 13898787348977
+  },
+  {
+   "input": "Q215b63ba4b858fbe62bab8f7af7fb0ffb7234a53",
+   "name": "Brimming Gannet 8k343",
+   "slug": "brimming-gannet-8k343",
+   "adjective": "Brimming",
+   "creature": "Gannet",
+   "tag": "8k343",
+   "sha256": "07631d46ebde36d516cf0bb151f9c697a7be01276819ab83504ec0a2af21ff9d",
+   "n": 211804955475869
+  },
+  {
+   "input": "Qd6ba62dfed2bd651f1df8652a1d69e9825ea037f",
+   "name": "Scratchy Bullock 7c525",
+   "slug": "scratchy-bullock-7c525",
+   "adjective": "Scratchy",
+   "creature": "Bullock",
+   "tag": "7c525",
+   "sha256": "f5cacf596d926ddf26815b34088da346e6bf64e3ef154c4d846359862effe761",
+   "n": 98432849012577
+  },
+  {
+   "input": "Q3dfc4f7d68e3954ad9e97a0e79f50fcd2d9f2a91",
+   "name": "Rainy Stork kk848",
+   "slug": "rainy-stork-kk848",
+   "adjective": "Rainy",
+   "creature": "Stork",
+   "tag": "kk848",
+   "sha256": "d8aa97f3861c634358b4ff1a1adf418f9d3d79859bd2a1bbc384332ca520165d",
+   "n": 56266841921117
+  },
+  {
+   "input": "Q98c5646b19ade12d2cd2588fee1c514e62ecab45",
+   "name": "Frank Mallard 3i835",
+   "slug": "frank-mallard-3i835",
+   "adjective": "Frank",
+   "creature": "Mallard",
+   "tag": "3i835",
+   "sha256": "b3a3332fd15490a525e6a859877ba534987807ab9fa6924d78d6419c8ca61c32",
+   "n": 72140630400050
+  },
+  {
+   "input": "Q045f81bb681438106b6d8b57eb2d237e6c4af26e",
+   "name": "Chattering Cockatiel nc876",
+   "slug": "chattering-cockatiel-nc876",
+   "adjective": "Chattering",
+   "creature": "Cockatiel",
+   "tag": "nc876",
+   "sha256": "8e7c6d20ae45a957e097a55c49118f9abc620235060c2d9d54dbea5c2633729e",
+   "n": 257681498796702
+  },
+  {
+   "input": "Qa00924a6e441b099aaafde1cad61eb33a652751f",
+   "name": "Swift Flicker gi796",
+   "slug": "swift-flicker-gi796",
+   "adjective": "Swift",
+   "creature": "Flicker",
+   "tag": "gi796",
+   "sha256": "8e1df796f9e5b0d5e8467124cfec78b281e53214d7269d2091217a7a8332a1db",
+   "n": 134666605732315
+  },
+  {
+   "input": "Qb59a27d22f3d5f823d7e799371ca2cfa4060ec25",
+   "name": "Portly Weevil 2w764",
+   "slug": "portly-weevil-2w764",
+   "adjective": "Portly",
+   "creature": "Weevil",
+   "tag": "2w764",
+   "sha256": "2bf8d0766d3221fc182d99a8d8bc43a40b676dff5842e450d566f94b4c68aa8a",
+   "n": 274101799791242
+  },
+  {
+   "input": "Qae3ac29516c0b040c18c777442e4ac4787c8b51a",
+   "name": "Lofty Agouti sz485",
+   "slug": "lofty-agouti-sz485",
+   "adjective": "Lofty",
+   "creature": "Agouti",
+   "tag": "sz485",
+   "sha256": "ee02fccd488dd5626d896328c01f6ae1d776f418d900d9e523e611e578155dec",
+   "n": 19677259849196
+  },
+  {
+   "input": "Q6e5702d61d191ca6ce77c0f2202809313d6ef14e",
+   "name": "Impatient Cub s7759",
+   "slug": "impatient-cub-s7759",
+   "adjective": "Impatient",
+   "creature": "Cub",
+   "tag": "s7759",
+   "sha256": "8bc03ef08d138472ca5b71022ecff9ed94b6c29d06d3c69fbd8e43bbd87a6e52",
+   "n": 74474069847634
+  },
+  {
+   "input": "Q3874ff8f71c515de888457183f2c2e8d918473c6",
+   "name": "Slick Whelk wg259",
+   "slug": "slick-whelk-wg259",
+   "adjective": "Slick",
+   "creature": "Whelk",
+   "tag": "wg259",
+   "sha256": "4f8fad69db3ff273c4a2e2844bf08228dfa08cc7f678dfebd8c8fbb06a5760e1",
+   "n": 276735116927201
+  },
+  {
+   "input": "Qd1504a4572d57116cd13c767d719eb7280dfd364",
+   "name": "Fretful Cobra 39462",
+   "slug": "fretful-cobra-39462",
+   "adjective": "Fretful",
+   "creature": "Cobra",
+   "tag": "39462",
+   "sha256": "7511fe3acf423a1c08465df93da257f9422123dbb58ed86596687045fce1c93f",
+   "n": 123445897709887
+  },
+  {
+   "input": "Qdea37ce1ae8df4fb528458d95265aaad737bcc6f",
+   "name": "Drumming Slowworm ef448",
+   "slug": "drumming-slowworm-ef448",
+   "adjective": "Drumming",
+   "creature": "Slowworm",
+   "tag": "ef448",
+   "sha256": "0e92eddd70ad0aaca0f002805ac2e11144eeafba097094a8d6e14b24526133c4",
+   "n": 82619373007812
+  },
+  {
+   "input": "Qbe2bc78e9f73cc1c4af3aa6a282cc6586b59a1bc",
+   "name": "Pleated Calf 48329",
+   "slug": "pleated-calf-48329",
+   "adjective": "Pleated",
+   "creature": "Calf",
+   "tag": "48329",
+   "sha256": "2772eb663748f50712d9af3bd2dfa32dc5654f57a41004076d5c0383ed787e1b",
+   "n": 3865159695899
+  },
+  {
+   "input": "Q7448aeb68f8922251561e472d62b26f60d15033a",
+   "name": "Nubby Buzzard wg595",
+   "slug": "nubby-buzzard-wg595",
+   "adjective": "Nubby",
+   "creature": "Buzzard",
+   "tag": "wg595",
+   "sha256": "179ba0fff17e61091700586be3108414063d3e1f0a6ce3f3266ffdf66a1d265d",
+   "n": 279234784077405
+  },
+  {
+   "input": "Q59983607184eabbbb1268ffab6b3173eaf3789fc",
+   "name": "Sprightly Guineafowl vi355",
+   "slug": "sprightly-guineafowl-vi355",
+   "adjective": "Sprightly",
+   "creature": "Guineafowl",
+   "tag": "vi355",
+   "sha256": "668c3053b7538a0fc7a3c63b1ea2ca02c8209a094a9a97a13675d1b289bdc598",
+   "n": 230564745299352
+  },
+  {
+   "input": "Qe56828b22f58a4bbf356aeaeb88109250163fc93",
+   "name": "Shimmying Mallard v2625",
+   "slug": "shimmying-mallard-v2625",
+   "adjective": "Shimmying",
+   "creature": "Mallard",
+   "tag": "v2625",
+   "sha256": "aba2a87f5fd6e47339b596453ba15ee001ba81e40694e9f79e25bd8989a6381c",
+   "n": 208398417541148
+  },
+  {
+   "input": "Q4f0dd588f05878b059b6c2d0e253af333cd1f2fa",
+   "name": "Plucky Terrapin je668",
+   "slug": "plucky-terrapin-je668",
+   "adjective": "Plucky",
+   "creature": "Terrapin",
+   "tag": "je668",
+   "sha256": "c1d10db2c13a5a454bcb87227008b89e8cddcde373a9402d5d21274844de0555",
+   "n": 43191346529621
+  },
+  {
+   "input": "Q7c87cf8d9f6115d5f170ed7e718fed86b2b6749d",
+   "name": "Little Shoveler v5452",
+   "slug": "little-shoveler-v5452",
+   "adjective": "Little",
+   "creature": "Shoveler",
+   "tag": "v5452",
+   "sha256": "6d63813c5e209cec966dd1e0bc104c88183ce1ffd7f440d2c87c9435b9a6ea09",
+   "n": 162958468901385
+  },
+  {
+   "input": "Qf82727b7f9f4a80f726c2559b9cf24fa67eb4f39",
+   "name": "Roaming Hawksbill 6t972",
+   "slug": "roaming-hawksbill-6t972",
+   "adjective": "Roaming",
+   "creature": "Hawksbill",
+   "tag": "6t972",
+   "sha256": "7eecd3d51d6a4a68dcad8f7d3d1cf372d25b84ee80bc38bf5307dc5f1e5eb771",
+   "n": 242301089527665
+  },
+  {
+   "input": "Q03c0bfd741939cfcc402325946383a10ebd4f142",
+   "name": "Nutty Needlefish zn738",
+   "slug": "nutty-needlefish-zn738",
+   "adjective": "Nutty",
+   "creature": "Needlefish",
+   "tag": "zn738",
+   "sha256": "6eb21a26f2d38e94687caa7c4e882dd007b48547e4ce42f790a34b1acbd3d88b",
+   "n": 82578460891275
+  },
+  {
+   "input": "Q63e7d5fded7e8b848e7a05bd6c0001fd3d71bbb5",
+   "name": "Mopey Toucan pc292",
+   "slug": "mopey-toucan-pc292",
+   "adjective": "Mopey",
+   "creature": "Toucan",
+   "tag": "pc292",
+   "sha256": "3da2311cc830100605776577290d790b387bf3ddd13f0b3e6715d87026b1c253",
+   "n": 237976197120595
+  },
+  {
+   "input": "Q9cd02e6d3fc38fcdc18dcae027ed31e77fa82cf4",
+   "name": "Vivid Mole 4y324",
+   "slug": "vivid-mole-4y324",
+   "adjective": "Vivid",
+   "creature": "Mole",
+   "tag": "4y324",
+   "sha256": "8d5a013e6b50750e2165ee0e8d67aa31506a780b96df1021426f41036d05e2a9",
+   "n": 71482969809577
+  },
+  {
+   "input": "Q256af353177656006a0545b1ce49d971b22fcfc6",
+   "name": "Handy Stallion zu524",
+   "slug": "handy-stallion-zu524",
+   "adjective": "Handy",
+   "creature": "Stallion",
+   "tag": "zu524",
+   "sha256": "e649e7bf9cbef6a2d5111fc7ddd7f4a93d44eccf70ad961a031e65072bfbdcc4",
+   "n": 111081477102788
+  },
+  {
+   "input": "Q41310d094355f8669bf392e18216b57c1ed64060",
+   "name": "Zany Peafowl a2663",
+   "slug": "zany-peafowl-a2663",
+   "adjective": "Zany",
+   "creature": "Peafowl",
+   "tag": "a2663",
+   "sha256": "d336527738304a9bb91e8ffea7e277baee63d067e6851cfc853d78c9803d863d",
+   "n": 132806835275325
+  },
+  {
+   "input": "Q6ab641c33420f123c2b0a105014c4a259d359566",
+   "name": "Snappy Whiting hb743",
+   "slug": "snappy-whiting-hb743",
+   "adjective": "Snappy",
+   "creature": "Whiting",
+   "tag": "hb743",
+   "sha256": "56d5b37cfb9f7cd8dc74c7ba4fa72f72b75e471c93c032697db2c8aa13c7c151",
+   "n": 220632801853777
+  },
+  {
+   "input": "Q5ff0039adc3c91e417de5567a4497ec7c0f6db67",
+   "name": "Nifty Tuna wn329",
+   "slug": "nifty-tuna-wn329",
+   "adjective": "Nifty",
+   "creature": "Tuna",
+   "tag": "wn329",
+   "sha256": "a43222b31757e154f1d7f5342c9b94aad4d7980eb1c07b17cefdc782ca4081cb",
+   "n": 219364552901067
+  },
+  {
+   "input": "Q2178d5a6dd5da6608b4605128fd5e8cfb35ad3f9",
+   "name": "Calm Hoverfly 52574",
+   "slug": "calm-hoverfly-52574",
+   "adjective": "Calm",
+   "creature": "Hoverfly",
+   "tag": "52574",
+   "sha256": "c7f9699d2aed2176a12bfdca2790a93fc3d021153be9050f1b6ec9578df15a8d",
+   "n": 221377880742541
+  },
+  {
+   "input": "Q8347d193a967733b42d23691f80457ea8cf93f00",
+   "name": "Gooey Cougar m3482",
+   "slug": "gooey-cougar-m3482",
+   "adjective": "Gooey",
+   "creature": "Cougar",
+   "tag": "m3482",
+   "sha256": "fdd442a50643e488dc3e4c3a2cd3b26789401e95364ac2b0a5e3bc65958e184b",
+   "n": 207144486836299
+  },
+  {
+   "input": "Qbfdf65c169568aaf2e0f7d083b595f4d91a88bb2",
+   "name": "Hardy Snipe pz375",
+   "slug": "hardy-snipe-pz375",
+   "adjective": "Hardy",
+   "creature": "Snipe",
+   "tag": "pz375",
+   "sha256": "0aa75e6db8a10e2d0844de4eb5c3487791ba47419cd7793bce22bdd376ab5d0c",
+   "n": 208715926691084
+  },
+  {
+   "input": "Qf198d7ed08a3c4574524fd027d03224be7c73f67",
+   "name": "Tasselled Butterfly 7u588",
+   "slug": "tasselled-butterfly-7u588",
+   "adjective": "Tasselled",
+   "creature": "Butterfly",
+   "tag": "7u588",
+   "sha256": "549dcd0573fd64275d49548af4060b6d48fbc15fa55b80cba87043672eec3eba",
+   "n": 74110447926970
+  },
+  {
+   "input": "Q90904ba343bad9bc526045e263566fa87a520bf3",
+   "name": "Blushing Admiral a9278",
+   "slug": "blushing-admiral-a9278",
+   "adjective": "Blushing",
+   "creature": "Admiral",
+   "tag": "a9278",
+   "sha256": "cde5412cf21172d33f5b5086b92e0517aa35b04860a2410961d51f51f06c8e3e",
+   "n": 34436786458174
+  },
+  {
+   "input": "Qf197664dd4580a347622b0700c240a8ce06e2bb0",
+   "name": "Tall Honeyeater jm666",
+   "slug": "tall-honeyeater-jm666",
+   "adjective": "Tall",
+   "creature": "Honeyeater",
+   "tag": "jm666",
+   "sha256": "403b542ca41994e613b4789d9adbf067a506978e967f802518b5aa48b4bb2b48",
+   "n": 187229246532424
+  },
+  {
+   "input": "Qceb32b76aea54e00240548a4108234907686c755",
+   "name": "Restful Quail kf564",
+   "slug": "restful-quail-kf564",
+   "adjective": "Restful",
+   "creature": "Quail",
+   "tag": "kf564",
+   "sha256": "90d8e555bfcb699829cfe4f1e60004dc530ff30202c37362cb64ed46553cc9db",
+   "n": 260886333540827
+  },
+  {
+   "input": "Q67b145e6f4f77720c6ca8f10945dbcafc05c0363",
+   "name": "Ancient Agama fe555",
+   "slug": "ancient-agama-fe555",
+   "adjective": "Ancient",
+   "creature": "Agama",
+   "tag": "fe555",
+   "sha256": "8a380ee1fd5f888454a01f25818bc4d6c1a46e134d58deb29bbeb5b642dfd282",
+   "n": 199794410640002
+  },
+  {
+   "input": "Qfc593ce983a64486581f237f8a43a0eb546ee9c0",
+   "name": "Drumming Ratsnake zv562",
+   "slug": "drumming-ratsnake-zv562",
+   "adjective": "Drumming",
+   "creature": "Ratsnake",
+   "tag": "zv562",
+   "sha256": "0a13826db6c38a6407cd2a1bcff5da3d2a163a721d30c62e892af4473be3f3dd",
+   "n": 268586784650205
+  },
+  {
+   "input": "Q2184ae18db5c36443778720d87a8914a66481587",
+   "name": "Pattering Cub im422",
+   "slug": "pattering-cub-im422",
+   "adjective": "Pattering",
+   "creature": "Cub",
+   "tag": "im422",
+   "sha256": "0f947b299b96d0e052b0b54682b0f5bd64116a43a944ceae53f68004b47a7663",
+   "n": 140757696149091
+  },
+  {
+   "input": "Q0367fbfc472b826b3b727c80e562ae951a438c57",
+   "name": "Solid Earwig f7644",
+   "slug": "solid-earwig-f7644",
+   "adjective": "Solid",
+   "creature": "Earwig",
+   "tag": "f7644",
+   "sha256": "9ca198cd9a1440a3d61a55f42ba3b1bf2c8cce8579af93e65eb42129d2f6e133",
+   "n": 36463516770611
+  },
+  {
+   "input": "Qc07b0a2d8e56f3d90f7e30e017054680b8e290e6",
+   "name": "Fluffy Shark f9268",
+   "slug": "fluffy-shark-f9268",
+   "adjective": "Fluffy",
+   "creature": "Shark",
+   "tag": "f9268",
+   "sha256": "699711c63cace1d8b2c98aa60d995d199dffc66cad8cb4f303d3a341f2cb4126",
+   "n": 179503641608486
+  },
+  {
+   "input": "Q4b4d7195e68ad8f7c723ab8a769b33328f1fb33b",
+   "name": "Jammy Nautilus ey332",
+   "slug": "jammy-nautilus-ey332",
+   "adjective": "Jammy",
+   "creature": "Nautilus",
+   "tag": "ey332",
+   "sha256": "f4a033e0c159a7944fc16f392900c04a5c061bc27d456d647f5f841362545875",
+   "n": 145218788939893
+  },
+  {
+   "input": "Q107a49009974f3883d1cca0dd863bed13c8b8378",
+   "name": "Zany Ferret ur792",
+   "slug": "zany-ferret-ur792",
+   "adjective": "Zany",
+   "creature": "Ferret",
+   "tag": "ur792",
+   "sha256": "2ed88df4ad4b2d0bbad6aa380a1c0ad6fa9a5635dc74cf031928907af9034634",
+   "n": 158857838151220
+  },
+  {
+   "input": "Q56034dcf8eaad60d7c1ae1f39f1d296191a2af77",
+   "name": "Bold Shrike 2x485",
+   "slug": "bold-shrike-2x485",
+   "adjective": "Bold",
+   "creature": "Shrike",
+   "tag": "2x485",
+   "sha256": "a30c01fd62c59577b65c4d2687816a5a9429c721a1021cdc3b23fde55c2e5a31",
+   "n": 279161535879729
+  },
+  {
+   "input": "Qde892d1b4a9e093ba61ed698a422b06829d89d9d",
+   "name": "Skittering Dolphin vt626",
+   "slug": "skittering-dolphin-vt626",
+   "adjective": "Skittering",
+   "creature": "Dolphin",
+   "tag": "vt626",
+   "sha256": "17b92bd5a58aaa54eea59342bb41e29d9d64af2ee8b17c3208e942091999786d",
+   "n": 72606851627117
+  },
+  {
+   "input": "Q6248bd061cf328979aaca71ca31c73779f7633a9",
+   "name": "Maroon Tiger ye659",
+   "slug": "maroon-tiger-ye659",
+   "adjective": "Maroon",
+   "creature": "Tiger",
+   "tag": "ye659",
+   "sha256": "ad223eeafc6a887f2916059a418ae6c1858eb8129040116aa93eabb84b0f0cca",
+   "n": 188808021609674
+  },
+  {
+   "input": "Q6cd7aab589fdd884285be1bac24fbeb8c0adbbfa",
+   "name": "Chalky Seahorse s4496",
+   "slug": "chalky-seahorse-s4496",
+   "adjective": "Chalky",
+   "creature": "Seahorse",
+   "tag": "s4496",
+   "sha256": "b5ab8523ac76dc0765575724fe92f0e12d7aa558eef3afb872fb7a75a850a3cd",
+   "n": 134645753619405
+  },
+  {
+   "input": "Qf98da4e0d0e68eabc352ee96e8463d2fb668ff4f",
+   "name": "Small Roller 2h673",
+   "slug": "small-roller-2h673",
+   "adjective": "Small",
+   "creature": "Roller",
+   "tag": "2h673",
+   "sha256": "fa37079f7b4479f9765ab9608984df905b211b2370e52a11332938d87c312af5",
+   "n": 62502447688437
+  },
+  {
+   "input": "Q939863527f26abc470b448bc79e6981645f67658",
+   "name": "Robust Halibut t9866",
+   "slug": "robust-halibut-t9866",
+   "adjective": "Robust",
+   "creature": "Halibut",
+   "tag": "t9866",
+   "sha256": "e86427353de0790dc40bc29b249a9931ed03053d7a56005ae82a724df8c89fea",
+   "n": 125679211945962
+  },
+  {
+   "input": "Q5de893110661a0a4de8b8b4452e1076b00da05a7db4d3cac5cd36e9c9d5c8ff95de893110661a0",
+   "name": "Bobbing Thrips f5438",
+   "slug": "bobbing-thrips-f5438",
+   "adjective": "Bobbing",
+   "creature": "Thrips",
+   "tag": "f5438",
+   "sha256": "718fb0f91aabf098d7d0a9df2ca7b937d28f4950fd50f3d2db3aa315b2f4327a",
+   "n": 179313591988858
+  },
+  {
+   "input": "Qb02e8c84fb4c0982536d5840d504a8fabd1aa110ace74965089aa60a0f2f78a5b02e8c84fb4c09",
+   "name": "Sultry Guillemot jt577",
+   "slug": "sultry-guillemot-jt577",
+   "adjective": "Sultry",
+   "creature": "Guillemot",
+   "tag": "jt577",
+   "sha256": "cf7b647fe49cdcb332b27fe5731a48234050095798c224294b3002d714a456f5",
+   "n": 3122787538677
+  },
+  {
+   "input": "Q35c7ee466b3e9210a1488a85c8a32c230aa31cc60343c24ec2c194dd28d3568435c7ee466b3e92",
+   "name": "Strapped Greenfinch 4m564",
+   "slug": "strapped-greenfinch-4m564",
+   "adjective": "Strapped",
+   "creature": "Greenfinch",
+   "tag": "4m564",
+   "sha256": "23def84e154aa7f920588b0421a16f7846ba2653fc76e0b775e18146bd38fe63",
+   "n": 142140822322787
+  },
+  {
+   "input": "Qca63122ec136ee118ae14cf65057ae93df4bfa75d798b6e0af7bae91e14a36bcca63122ec136ee",
+   "name": "Wrapped Nutcracker wc883",
+   "slug": "wrapped-nutcracker-wc883",
+   "adjective": "Wrapped",
+   "creature": "Nutcracker",
+   "tag": "wc883",
+   "sha256": "bbd28408f6cc6f8e748abd17dc847f4e287408d04deb3be67c0e94ec2a2d7f20",
+   "n": 163742040817440
+  },
+  {
+   "input": "Q49ba7edd712df465f453b5076e366965657d449fe48f41d447a255695e29c1b649ba7edd712df4",
+   "name": "Smudgy Angelfish iv839",
+   "slug": "smudgy-angelfish-iv839",
+   "adjective": "Smudgy",
+   "creature": "Angelfish",
+   "tag": "iv839",
+   "sha256": "4ab60c72f3b85078266adafe0ee2f4b5419cb35a63440bb0c7cc579d344ee7c7",
+   "n": 96332699068359
+  },
+  {
+   "input": "Qbdfdcef5beb50bdd715402618a73db90a99fc138744829da4f5b61a281ba0f25bdfdcef5beb50b",
+   "name": "Rowdy Alpaca p8936",
+   "slug": "rowdy-alpaca-p8936",
+   "adjective": "Rowdy",
+   "creature": "Alpaca",
+   "tag": "p8936",
+   "sha256": "6b2beb8e3045b7815e5b86c92031a0af79f33b84be2cda466c91ce1fe685057b",
+   "n": 226636406785403
+  },
+  {
+   "input": "Q4f58a0285b58b6c3b7b65998b26cdc9ee458d2d413b18e0a73e75678b9528c5c4f58a0285b58b6",
+   "name": "Dancing Marmoset yp582",
+   "slug": "dancing-marmoset-yp582",
+   "adjective": "Dancing",
+   "creature": "Marmoset",
+   "tag": "yp582",
+   "sha256": "e9e079fc1bc81da65304c8280679f541df037c29f6173ed8a145f866db1f3348",
+   "n": 273120646607688
+  },
+  {
+   "input": "Qfe0407fb83e4c2ad85e7ed43aec949784692ccd8dd5ac60d12d14126abf3017bfe0407fb83e4c2",
+   "name": "Hopping Razorbill 55575",
+   "slug": "hopping-razorbill-55575",
+   "adjective": "Hopping",
+   "creature": "Razorbill",
+   "tag": "55575",
+   "sha256": "c4ba4448fcadf7b8b7da7d16fd0658cd3f7e88d61557420e751301d7bda486d2",
+   "n": 2026111272658
+  },
+  {
+   "input": "Qe8684f3a3c11ab7404a2f3a87f0f26c65e5e3bba9d8921501c29f6e8abde36c5e8684f3a3c11ab",
+   "name": "Rowdy Pufferfish xp582",
+   "slug": "rowdy-pufferfish-xp582",
+   "adjective": "Rowdy",
+   "creature": "Pufferfish",
+   "tag": "xp582",
+   "sha256": "2fabfa54f2d6d4f40a23559e757c059df28b9bb8d708ad29ebd82066dad00575",
+   "n": 35626129818997
+  },
+  {
+   "input": "Q60beb677f725d823901e51ca305d314ba92fe11cb9d6266231c98526e7945d2560beb677f725d8",
+   "name": "Napping Bullfinch h4997",
+   "slug": "napping-bullfinch-h4997",
+   "adjective": "Napping",
+   "creature": "Bullfinch",
+   "tag": "h4997",
+   "sha256": "542cd59b812858677e8a0d5bed7e62450001916acc92e8b45e894affa3b8b604",
+   "n": 82461823907332
+  },
+  {
+   "input": "Q265c0457996c29c241c9f17f9cbb3a548f297d9fe636c57ba466402ce1845fde265c0457996c29",
+   "name": "Serene Hen py549",
+   "slug": "serene-hen-py549",
+   "adjective": "Serene",
+   "creature": "Hen",
+   "tag": "py549",
+   "sha256": "5d68c27e23d6fd836f355c9653ef5ffd7032073d0b84a8ea48bd8fa766fe6037",
+   "n": 157949150257207
+  },
+  {
+   "input": "Q05bec65d6c9fa9c4ad72295c569bb0883f405e30e8952e295c80ca224a0fb96505bec65d6c9fa9",
+   "name": "Chirping Pintail kd882",
+   "slug": "chirping-pintail-kd882",
+   "adjective": "Chirping",
+   "creature": "Pintail",
+   "tag": "kd882",
+   "sha256": "939aff3220303c47550d86b26149fc2e28704c80f5e0e96f10bbe06c3526b2b5",
+   "n": 246755352818357
+  },
+  {
+   "input": "Qa8c2c8d0ff657995e88e9297452ac96a29e5b94648090872503fb9c24af5c9aba8c2c8d0ff6579",
+   "name": "Proper Puffin zq892",
+   "slug": "proper-puffin-zq892",
+   "adjective": "Proper",
+   "creature": "Puffin",
+   "tag": "zq892",
+   "sha256": "2c809020757f96c97b16a461faac055171540a7e696d093b26af787ceb81d467",
+   "n": 132477922432103
+  },
+  {
+   "input": "Q4ef51141adaf28c1b622453593e6b9244d334a854a94aad90eea4e90353d3ede4ef51141adaf28",
+   "name": "Rattling Elk rd267",
+   "slug": "rattling-elk-rd267",
+   "adjective": "Rattling",
+   "creature": "Elk",
+   "tag": "rd267",
+   "sha256": "c4629fbffefe41bc266788340b960d9abf6327eae8ec78afef8c12c03793b752",
+   "n": 20616775448402
+  },
+  {
+   "input": "Q6c72719a85cc356024483786a3b57c841c9fcd6317593b23cd91b5a83a2458b06c72719a85cc35",
+   "name": "Elated Halfbeak cw343",
+   "slug": "elated-halfbeak-cw343",
+   "adjective": "Elated",
+   "creature": "Halfbeak",
+   "tag": "cw343",
+   "sha256": "0c6cee5eb68a6e83120154c2c24b776fe0549928336edc6b538b50a341542d77",
+   "n": 88662105927031
+  },
+  {
+   "input": "Q12db2c484809b44743f717792d0c554915b54c9093d04978e16f7806c2566c5a12db2c484809b4",
+   "name": "Peaceful Turnstone 37739",
+   "slug": "peaceful-turnstone-37739",
+   "adjective": "Peaceful",
+   "creature": "Turnstone",
+   "tag": "37739",
+   "sha256": "2bb9c179dd9e8c9fb16a63f6fff9e787d91e15de0700eccd01ce7b9bdcaa0ace",
+   "n": 135909352278734
+  },
+  {
+   "input": "Qf7355176e000ff1afd53c31ac9db8bed4bfb135e86a5b76eb810941dc56ae32ef7355176e000ff",
+   "name": "Noisy Gharial v9253",
+   "slug": "noisy-gharial-v9253",
+   "adjective": "Noisy",
+   "creature": "Gharial",
+   "tag": "v9253",
+   "sha256": "123862a8e8272d144f1e43a34c5a9d1499026593db04b1354d4974b1f9e55ea7",
+   "n": 128307750592167
+  },
+  {
+   "input": "Qc601ec645e807f4efe16f29ae99680b198d5894d3ae94f9e9177db4242506e66c601ec645e807f",
+   "name": "Thumping Bonefish wc865",
+   "slug": "thumping-bonefish-wc865",
+   "adjective": "Thumping",
+   "creature": "Bonefish",
+   "tag": "wc865",
+   "sha256": "a63fbe1df27d416033b266dc22ae692158bf397211795c109e7b31cc2a4d7a78",
+   "n": 54752952810104
+  },
+  {
+   "input": "Qb4004f93aa2e7faa9cf42cd2d13b6f7f4d5f1fada275932e97716e116a12a214b4004f93aa2e7f",
+   "name": "Zany Ptarmigan yj396",
+   "slug": "zany-ptarmigan-yj396",
+   "adjective": "Zany",
+   "creature": "Ptarmigan",
+   "tag": "yj396",
+   "sha256": "44368c1f241059e723056110772218f76c555582a9edf9ade45af2729b3d4633",
+   "n": 266574044677683
+  },
+  {
+   "input": "Q518fd19829cc88eead7c2835036358f86ba93856085b59124f459614fc34886d518fd19829cc88",
+   "name": "Goofy Plaice b8643",
+   "slug": "goofy-plaice-b8643",
+   "adjective": "Goofy",
+   "creature": "Plaice",
+   "tag": "b8643",
+   "sha256": "a694a05675e8a7ea382d2e5eb83079e830307ff027926af42f4508a9e0c902d7",
+   "n": 9525713765079
+  },
+  {
+   "input": "Q4a591ef3db3321701d6396d46c09dfa12098a2e276fa2c639a9091e5e1522b2c4a591ef3db3321",
+   "name": "Antsy Scorpion 3s263",
+   "slug": "antsy-scorpion-3s263",
+   "adjective": "Antsy",
+   "creature": "Scorpion",
+   "tag": "3s263",
+   "sha256": "499d79bf89181f9e3e943dcaf4249f0d7cf209c29a73add5c5fdb0c10cf62c24",
+   "n": 194343192636452
+  },
+  {
+   "input": "Q541dbe250423d2ab5028b35c5bbe51634f97313521da8a1a13abbc506b2bdec6541dbe250423d2",
+   "name": "Rowdy Weevil up242",
+   "slug": "rowdy-weevil-up242",
+   "adjective": "Rowdy",
+   "creature": "Weevil",
+   "tag": "up242",
+   "sha256": "a71f51467675c7991d572d24fe3769ffd7410f20e455602760344420d9688575",
+   "n": 74907877148021
+  },
+  {
+   "input": "Qa58df145e681b57a403f951f8c488b3522bbc8a54609157f55f794daf170e8a2a58df145e681b5",
+   "name": "Snoozing Albatross xa927",
+   "slug": "snoozing-albatross-xa927",
+   "adjective": "Snoozing",
+   "creature": "Albatross",
+   "tag": "xa927",
+   "sha256": "fb957659b311847ab050ff079e0be953a50397be2064dab1493eba8e0aa278a4",
+   "n": 205119226542244
+  },
+  {
+   "input": "Qa38a474a761a04e091d1a4cc0b26edf8a26bae92bdb78c0d0f617695202fc981a38a474a761a04",
+   "name": "Spiffy Leafcutter ek225",
+   "slug": "spiffy-leafcutter-ek225",
+   "adjective": "Spiffy",
+   "creature": "Leafcutter",
+   "tag": "ek225",
+   "sha256": "56f3a1400c8742e44cda112fa908a1b660e64f1117405b3816749180a270c2a5",
+   "n": 159981667140261
+  },
+  {
+   "input": "Qb93b26ed4cb4aea3d5b83d2f5deb1b05794b2ef355d8b3bf4a46f57bfcf56637b93b26ed4cb4ae",
+   "name": "Boxy Ocelot rc378",
+   "slug": "boxy-ocelot-rc378",
+   "adjective": "Boxy",
+   "creature": "Ocelot",
+   "tag": "rc378",
+   "sha256": "f345625ae9fd0bf5959a4e6ab5ae7ba0d50a280e13a25377e1529f52278de8e8",
+   "n": 175175199746280
+  },
+  {
+   "input": "Q323e43d082e30431f2e0b3d89d73ad52a20c1e86c01f42db52bfceaca7cea333323e43d082e304",
+   "name": "Ivory Stallion ia776",
+   "slug": "ivory-stallion-ia776",
+   "adjective": "Ivory",
+   "creature": "Stallion",
+   "tag": "ia776",
+   "sha256": "7eb2f2eadbb88b5a6c6a463e04fadf8483458445290295ef5db55e5a047bcc5c",
+   "n": 103740715289692
+  },
+  {
+   "input": "Q213743e79250163f5c64064b06d1c15c424d68793e51ef704d382df9f8fc3e3d213743e7925016",
+   "name": "Thankful Orbweaver un338",
+   "slug": "thankful-orbweaver-un338",
+   "adjective": "Thankful",
+   "creature": "Orbweaver",
+   "tag": "un338",
+   "sha256": "b24cbf512667573a389c6face18e6d3e2f313f7b643a440d411c5312c974c9f5",
+   "n": 91340154391029
+  },
+  {
+   "input": "Q203d20da78c52c8c908cd2f5f3311fb6b0adacee6a708d92059d12e96a962a52203d20da78c52c",
+   "name": "Beaming Condor 4a566",
+   "slug": "beaming-condor-4a566",
+   "adjective": "Beaming",
+   "creature": "Condor",
+   "tag": "4a566",
+   "sha256": "c5c1218d6cf30e5607dc233f4727df4ba76e78b667512fca62cb76460d1e7fb6",
+   "n": 130043239890870
+  },
+  {
+   "input": "Q26a39bcc565c64ba5fb9697ca83af389d89fe4dbcdd0ba89e84925787ac2265426a39bcc565c64",
+   "name": "Lanky Fox 6d482",
+   "slug": "lanky-fox-6d482",
+   "adjective": "Lanky",
+   "creature": "Fox",
+   "tag": "6d482",
+   "sha256": "45afb3955d03acf55cbcd1e59ee3c50719122103e9a09fd8638f50643e0825e4",
+   "n": 88391467673060
+  },
+  {
+   "input": "Qf18f3ad039ba57224c26f6224947266346c611ae0b5d91d865ad24fe71f67892f18f3ad039ba57",
+   "name": "Gnarly Manatee b6786",
+   "slug": "gnarly-manatee-b6786",
+   "adjective": "Gnarly",
+   "creature": "Manatee",
+   "tag": "b6786",
+   "sha256": "06b15c8ca330ef19b9bde203dbc67116624ee37b83dfd69010d12a6bc098252e",
+   "n": 46642281063726
+  },
+  {
+   "input": "Q18188714a3b2c22aac577bc6eccf76e858f1694cf9e14ceee4f0ae2fb52bb5bd18188714a3b2c2",
+   "name": "Jade Lobster en574",
+   "slug": "jade-lobster-en574",
+   "adjective": "Jade",
+   "creature": "Lobster",
+   "tag": "en574",
+   "sha256": "89b19453d213fb0a6d810589437a0b6ab2dfac725fdbdd25e5483d56c2054c6d",
+   "n": 67442831608941
+  },
+  {
+   "input": "Q57eb5b496b4c9cba2720e72b79c90556e6abe6b035ff78827502283ac38deb1757eb5b496b4c9c",
+   "name": "Shiny Linnet 92423",
+   "slug": "shiny-linnet-92423",
+   "adjective": "Shiny",
+   "creature": "Linnet",
+   "tag": "92423",
+   "sha256": "408647dd796f550d6da65a25a33f3f9c3a7d61c44ada5c4f0af734858fb98f98",
+   "n": 57748246597528
+  },
+  {
+   "input": "Qc3b39931616cbb054d55c2cb7279587f43cc625c89b0542d5f283572f2d8b63ec3b39931616cbb",
+   "name": "Sultry Mako nn252",
+   "slug": "sultry-mako-nn252",
+   "adjective": "Sultry",
+   "creature": "Mako",
+   "tag": "nn252",
+   "sha256": "157f14cfac420b270a67a562c3d4113517b7c0b7a53805599c864c30c64c16e7",
+   "n": 83772369016551
+  },
+  {
+   "input": "Q0378ab40a5d61be1d638f8fb21c0a431716e490002e6f78aab7e4b309f59a6610378ab40a5d61b",
+   "name": "Fidgety Flounder b9792",
+   "slug": "fidgety-flounder-b9792",
+   "adjective": "Fidgety",
+   "creature": "Flounder",
+   "tag": "b9792",
+   "sha256": "bee5a59a41cb467f5f1893e9f429e586375100e31a814835e528ec7bf0c9ad87",
+   "n": 260017064881543
+  },
+  {
+   "input": "Qe3c8ba2ff20715662966be659f03e58166650a19f9d1b601566a080abcb29cf3e3c8ba2ff20715",
+   "name": "Gooey Guanaco ii279",
+   "slug": "gooey-guanaco-ii279",
+   "adjective": "Gooey",
+   "creature": "Guanaco",
+   "tag": "ii279",
+   "sha256": "e7a4ccb978a4354faecba3527ae6fb8225de78d49cdc5f4a1ae4d7d084165851",
+   "n": 237290569226321
+  },
+  {
+   "input": "Qacebb8272e6629175ee0bef4b1c18f92c78af7e8bb9762b8d8f3b18c54c670fcacebb8272e6629",
+   "name": "Sneaky Wagtail m3428",
+   "slug": "sneaky-wagtail-m3428",
+   "adjective": "Sneaky",
+   "creature": "Wagtail",
+   "tag": "m3428",
+   "sha256": "176f09b29e7ae710b407189da5710f890e4211e99150e4ca3999ef0595af008c",
+   "n": 262807265149068
+  },
+  {
+   "input": "Qff30f8bd4affd882bcc18584a395d72a60f7404486508126e207e87facd2c5c0ff30f8bd4affd8",
+   "name": "Boastful Agouti bf636",
+   "slug": "boastful-agouti-bf636",
+   "adjective": "Boastful",
+   "creature": "Agouti",
+   "tag": "bf636",
+   "sha256": "c4fa14e36639f4fd87f4dfa5551d7ccf121c72f148e3f1d585307618509548de",
+   "n": 129846803253470
+  },
+  {
+   "input": "Qb69543f3da3377183a326acc96c99a63f5a54906efc62ebf623cb95d13f7dc01b69543f3da3377",
+   "name": "Sneaky Dipper 32394",
+   "slug": "sneaky-dipper-32394",
+   "adjective": "Sneaky",
+   "creature": "Dipper",
+   "tag": "32394",
+   "sha256": "eba0d8e413c988b6e3b5b32e30ddb277edcb51795e38b1466ab7b1738caec099",
+   "n": 195109839618201
+  },
+  {
+   "input": "Qa146f5c7acff7cf43e7173bfd869844f2bec3084d09d82fe0f2d20cb5dd617f7a146f5c7acff7c",
+   "name": "Wary Springtail jb985",
+   "slug": "wary-springtail-jb985",
+   "adjective": "Wary",
+   "creature": "Springtail",
+   "tag": "jb985",
+   "sha256": "568f1d7b5da880c38f6b2b7cc36ca372307f0de3a828d6163a2bcdee14dd7180",
+   "n": 226422435967360
+  },
+  {
+   "input": "Qf9e24b105ff2b655fa8f10bb51e5062d0c456709049186541b62f03d3b66bbc8f9e24b105ff2b6",
+   "name": "Fizzy Rail qr532",
+   "slug": "fizzy-rail-qr532",
+   "adjective": "Fizzy",
+   "creature": "Rail",
+   "tag": "qr532",
+   "sha256": "298f2cfcd6097f99c14361f53663871b038f7f621d327efb88e75c16f728d81f",
+   "n": 101253705685023
+  },
+  {
+   "input": "Q388015aea3daf99101239bb0ead6da17e2572423888b0f980b45e1ece361a19f388015aea3daf9",
+   "name": "Burly Bear 4f223",
+   "slug": "burly-bear-4f223",
+   "adjective": "Burly",
+   "creature": "Bear",
+   "tag": "4f223",
+   "sha256": "4cfdccdc0fa727f90ee307a6e88ca738c2548c3f9d0866a97f36bc805d08a923",
+   "n": 207259502684451
+  },
+  {
+   "input": "Qc2cc82f3607630c9c118bea40370a76d7f478591337c8fdbe38b8ec57f6728e7c2cc82f3607630",
+   "name": "Dreamy Cygnet aa488",
+   "slug": "dreamy-cygnet-aa488",
+   "adjective": "Dreamy",
+   "creature": "Cygnet",
+   "tag": "aa488",
+   "sha256": "b0e3d3a8a15061a749de5b5f9eec3e264ecafd6f08ebdd5cde5e8f6400799ba8",
+   "n": 157659667471272
+  },
+  {
+   "input": "Q4c3a0fe513c13320221345d10d22b04f123a7c3df6bd8e4de4965250d4d986a14c3a0fe513c133",
+   "name": "Small Glowworm bh642",
+   "slug": "small-glowworm-bh642",
+   "adjective": "Small",
+   "creature": "Glowworm",
+   "tag": "bh642",
+   "sha256": "20a820f6b1adeae30abcd3949752b0ac76267541de5de345af3d642870e92aef",
+   "n": 110124855798511
+  },
+  {
+   "input": "Q90cac6da02733cecde13b724cccc4ffe056bea6c40c748b03002cc52386d071290cac6da02733c",
+   "name": "Plucky Cuttlefish 8b227",
+   "slug": "plucky-cuttlefish-8b227",
+   "adjective": "Plucky",
+   "creature": "Cuttlefish",
+   "tag": "8b227",
+   "sha256": "3ecb13fcea4109e4515ce9a95bb4cfa8b5db061f492ebab794c83a801f54c54e",
+   "n": 64321955874126
+  },
+  {
+   "input": "Qd35d4813369aa3d70180096d979bd8059b71cef9d5f059c4655067007044c155d35d4813369aa3",
+   "name": "Stubby Fox xb632",
+   "slug": "stubby-fox-xb632",
+   "adjective": "Stubby",
+   "creature": "Fox",
+   "tag": "xb632",
+   "sha256": "1ea7815a5f01ae57483e231fb2b479ed36a7af6f82dc01ca41d904181a88283e",
+   "n": 4501570857022
+  },
+  {
+   "input": "Q9fe5d03e1eda90b9fa92cb18d402123cba20ef6dc08214b67fa02c7cc70ce7b39fe5d03e1eda90",
+   "name": "Speedy Eland uh955",
+   "slug": "speedy-eland-uh955",
+   "adjective": "Speedy",
+   "creature": "Eland",
+   "tag": "uh955",
+   "sha256": "d7acbfaf2ef740b74eb2c5c0f6309f7c839a9c0e619ab5c5774aadbe79126147",
+   "n": 191033586639175
+  },
+  {
+   "input": "Q67cde887900145033dea3885d8b6477efc6a9a454715720ccb30a57de797b65f67cde887900145",
+   "name": "Trusty Bonito vs986",
+   "slug": "trusty-bonito-vs986",
+   "adjective": "Trusty",
+   "creature": "Bonito",
+   "tag": "vs986",
+   "sha256": "ebe1fd5a0a52089b5646c4aae7e755303361f9508676672d3c771a6f09c0c5f5",
+   "n": 29064207320565
+  },
+  {
+   "input": "Q066c7efb0112607d4b12a309584d4462ade33d8163ccae86906f62e52884cdc7066c7efb011260",
+   "name": "Kindly Hoopoe fe782",
+   "slug": "kindly-hoopoe-fe782",
+   "adjective": "Kindly",
+   "creature": "Hoopoe",
+   "tag": "fe782",
+   "sha256": "be93e5ab48b2c6e66e4a0460f0aa3840c162ab966ecc736dab5af06a42b15dbb",
+   "n": 264339176119739
+  },
+  {
+   "input": "Q25680740fa15d73403f99808331121f776a4f34ecac76b3284ca53e53670905825680740fa15d7",
+   "name": "Soggy Shrike qa995",
+   "slug": "soggy-shrike-qa995",
+   "adjective": "Soggy",
+   "creature": "Shrike",
+   "tag": "qa995",
+   "sha256": "3fc1b872f62209b8e54a49470d799bb555563396efb842b0a92be1fe072e401f",
+   "n": 248481158414367
+  },
+  {
+   "input": "Q2403f79a457ae286b77cfff9113421c0b23526b6bc7de029ed866f0ab9983c2e2403f79a457ae2",
+   "name": "Cranky Loach vb849",
+   "slug": "cranky-loach-vb849",
+   "adjective": "Cranky",
+   "creature": "Loach",
+   "tag": "vb849",
+   "sha256": "e20f2801df69cbe8503549e1c3da1151a3f7cb84ef5a57cf7b1fb7ac19c5c0bf",
+   "n": 201949794648255
+  },
+  {
+   "input": "Qbfe468115606628165a589511c84a3b8f9a83a2ae2bafe1833b554e66d4bb16fbfe46811560662",
+   "name": "Brand Ibex ys368",
+   "slug": "brand-ibex-ys368",
+   "adjective": "Brand",
+   "creature": "Ibex",
+   "tag": "ys368",
+   "sha256": "bf84df5c12a4145a7c0088280573262573fee63454d4942688115f430b1012cd",
+   "n": 104741553050317
+  },
+  {
+   "input": "Qcbc11b52fc26d3f671a156d41f303dc4242e04f7342f0fdba703647c8d8356dccbc11b52fc26d3",
+   "name": "Portly Jacamar 8h982",
+   "slug": "portly-jacamar-8h982",
+   "adjective": "Portly",
+   "creature": "Jacamar",
+   "tag": "8h982",
+   "sha256": "6a4506a0a250c45ef22aa4fb28bffe969c66694ce0bf201b75f90c6e7f3c2a8e",
+   "n": 13668720585358
+  },
+  {
+   "input": "Q6f691ba3d112d32d13aff4f0d18a44848f0ee7b0fc9965e3b6dc5960e3ba0ff26f691ba3d112d3",
+   "name": "Simple Duckling 44389",
+   "slug": "simple-duckling-44389",
+   "adjective": "Simple",
+   "creature": "Duckling",
+   "tag": "44389",
+   "sha256": "9aa8f47a1ec6830b100268fe7d1d353a55a134f8c9a510aaad2a4be3ad7920b4",
+   "n": 83441240055988
+  },
+  {
+   "input": "Qa92bc2301f2849285820bcc792d3a1a628350ef1eeb32fb398b23392d2ad43a7a92bc2301f2849",
+   "name": "Pleated Manatee y7234",
+   "slug": "pleated-manatee-y7234",
+   "adjective": "Pleated",
+   "creature": "Manatee",
+   "tag": "y7234",
+   "sha256": "7fd196a9ad62c448a1acd5aa6dfe742d0d159d26c2a95d374f297d11db183e16",
+   "n": 137515643715094
+  },
+  {
+   "input": "Q35d577a0fad4efd41a033ca7ea155d14a26c3ac4cdd4212b3f4c995dfdec822235d577a0fad4ef",
+   "name": "Napping Garfish i6452",
+   "slug": "napping-garfish-i6452",
+   "adjective": "Napping",
+   "creature": "Garfish",
+   "tag": "i6452",
+   "sha256": "9c5c5d11536dff0bf9534b00e156464ad4d2839b11978060d4005035c453b613",
+   "n": 88191857309203
+  },
+  {
+   "input": "Q609f6fb73bb5d6e2b57fbcb2e89ee9d3399f8fbff936fda208c21b1483ae380f609f6fb73bb5d6",
+   "name": "Tidy Condor di623",
+   "slug": "tidy-condor-di623",
+   "adjective": "Tidy",
+   "creature": "Condor",
+   "tag": "di623",
+   "sha256": "073006f0605025f1fe221d91875a76ef7f49adb7c82fd9af11ab7c88819e45db",
+   "n": 136925732029915
+  },
+  {
+   "input": "Q7c67f0b382d6060b7c93c96c9809b9a8e9365d03d48aa62cb6424ab7be4ebcd97c67f0b382d606",
+   "name": "Wobbling Pipefish zd989",
+   "slug": "wobbling-pipefish-zd989",
+   "adjective": "Wobbling",
+   "creature": "Pipefish",
+   "tag": "zd989",
+   "sha256": "6b831d9eb471be5192bdd162b236760fb485f76538f1008a6236a7ee3bd0fbfd",
+   "n": 184641647606781
+  },
+  {
+   "input": "Q81dae80168cd8475e4c4dc3dfcb6955a1677080d1ae32884fa22bcf9df5c774e81dae80168cd84",
+   "name": "Cosy Kiwi dv256",
+   "slug": "cosy-kiwi-dv256",
+   "adjective": "Cosy",
+   "creature": "Kiwi",
+   "tag": "dv256",
+   "sha256": "224297cb12cd0e51401fee19d7909490ef15fc9e64552b0aaf5fc23131bf1b3e",
+   "n": 213516543793982
+  },
+  {
+   "input": "Qe1f3602af5743b0ee0b278d4cac6d983312f13bb7bbe0b75b9fa8ac308e62491e1f3602af5743b",
+   "name": "Gooey Bulbul r7246",
+   "slug": "gooey-bulbul-r7246",
+   "adjective": "Gooey",
+   "creature": "Bulbul",
+   "tag": "r7246",
+   "sha256": "86541d999c4f3ebfc8e0583a1fac8566d6af9c8b23caef9205958221d7ae1852",
+   "n": 143081864042578
+  },
+  {
+   "input": "Q1fc2abd933501becacf70bdf930c48a32daff40db34298a82c723d613fbdc8721fc2abd933501b",
+   "name": "Stumbling Thresher ks695",
+   "slug": "stumbling-thresher-ks695",
+   "adjective": "Stumbling",
+   "creature": "Thresher",
+   "tag": "ks695",
+   "sha256": "b99c37b18e9f49731e3c5a394114b89fe28bace3dc8fd81d7cbb55f9054bf9ea",
+   "n": 94528024082922
+  },
+  {
+   "input": "Q52de190aaa7fb3c3d34ad9d85da72df7a16adf9956a89eda8c46c82046f0a7e452de190aaa7fb3",
+   "name": "Dashing Moose hu272",
+   "slug": "dashing-moose-hu272",
+   "adjective": "Dashing",
+   "creature": "Moose",
+   "tag": "hu272",
+   "sha256": "bf65e9434d7119f408907762913dc4d7b43b51d4198e23db65476c5123827372",
+   "n": 119095743902578
+  },
+  {
+   "input": "Q936c0a93cf1a4bec20b4ea2954896cbb155f597022a8bef852c0236854b28ab3936c0a93cf1a4b",
+   "name": "Waltzing Albatross iv743",
+   "slug": "waltzing-albatross-iv743",
+   "adjective": "Waltzing",
+   "creature": "Albatross",
+   "tag": "iv743",
+   "sha256": "3a82d2b8eb827d5b2d69b23e87438ed843ef10a05bf4f2e542a1a0ab34227b97",
+   "n": 176657174526871
+  },
+  {
+   "input": "Q2877fab553b82701d34339d951dfacf1d8ad29d6a8fe821b0f3638d683f79c6f2877fab553b827",
+   "name": "Fluffy Wagtail hr676",
+   "slug": "fluffy-wagtail-hr676",
+   "adjective": "Fluffy",
+   "creature": "Wagtail",
+   "tag": "hr676",
+   "sha256": "b294b19056d60ed4f02082b48100b898102adbc344bcb75d4ff67658f3af012e",
+   "n": 130124417532206
+  },
+  {
+   "input": "Q0feffa657fd586cb350ab0348cd53846a41a4c76c89b99401f2d626d6b6568780feffa657fd586",
+   "name": "Misty Sole pu322",
+   "slug": "misty-sole-pu322",
+   "adjective": "Misty",
+   "creature": "Sole",
+   "tag": "pu322",
+   "sha256": "2b6dc689f0cf765300cf29e01ca5340858876452909e7438c5f5600326c95622",
+   "n": 105566651897378
+  },
+  {
+   "input": "Q8688c41892CdfBb8b7be763D08D7b064b6342D06",
+   "name": "Bumpy Hobby 6g535",
+   "slug": "bumpy-hobby-6g535",
+   "adjective": "Bumpy",
+   "creature": "Hobby",
+   "tag": "6g535",
+   "sha256": "b56ba34d66e5a1cb1eb050cd503f1ef1861cae28c606efd037d00d966e1c63ab",
+   "n": 14939743609771
+  },
+  {
+   "input": "Q92217719c197e64F539aE32Fe478f0F1B63B2ea0",
+   "name": "Rustling Carp 9z477",
+   "slug": "rustling-carp-9z477",
+   "adjective": "Rustling",
+   "creature": "Carp",
+   "tag": "9z477",
+   "sha256": "cb417743c2771e29e880b31f7aefc6a676c4a245156dbbf19e3b5ed57fc4b7c7",
+   "n": 104271064643527
+  },
+  {
+   "input": "QFde75900BA6628e0d95E45fE00Dc998f462383aC",
+   "name": "Foggy Dace 6c594",
+   "slug": "foggy-dace-6c594",
+   "adjective": "Foggy",
+   "creature": "Dace",
+   "tag": "6c594",
+   "sha256": "8a2df9b206afe9ebc062e0d44ffbdf6154acbe6ca69ee9a50e6425762e4555ac",
+   "n": 41189512664492
+  },
+  {
+   "input": "Q456f72aF736F850367384C214b76B741d049D788",
+   "name": "Velvety Hawkmoth 8j723",
+   "slug": "velvety-hawkmoth-8j723",
+   "adjective": "Velvety",
+   "creature": "Hawkmoth",
+   "tag": "8j723",
+   "sha256": "92f6d5de1dac37ff3edac41d89bf203edbb1df157ca8bf9ca87b9c8a9f6e1065",
+   "n": 172119194210405
+  },
+  {
+   "input": "Q6aeF0F5014A9Af21636024AbFd3D017cdeD9C41A",
+   "name": "Bumpy Halfbeak zv958",
+   "slug": "bumpy-halfbeak-zv958",
+   "adjective": "Bumpy",
+   "creature": "Halfbeak",
+   "tag": "zv958",
+   "sha256": "1ef102663dfab185b1987ace8a547184c748c02179337c2883855f3f3bd423b1",
+   "n": 104725191336881
+  },
+  {
+   "input": "Q6AE380fDe54f784446BD2937C4581a3fd677a562",
+   "name": "Creaking Armadillo vq245",
+   "slug": "creaking-armadillo-vq245",
+   "adjective": "Creaking",
+   "creature": "Armadillo",
+   "tag": "vq245",
+   "sha256": "b289f0aa32675dd76bcd45396c625a93ebd5d9c286fec050226f15a0e98c32f8",
+   "n": 23780857230072
+  },
+  {
+   "input": "Q3B828653A165f01A53004134bA8293b6d43200FA",
+   "name": "Skipping Falcon u7567",
+   "slug": "skipping-falcon-u7567",
+   "adjective": "Skipping",
+   "creature": "Falcon",
+   "tag": "u7567",
+   "sha256": "643ec47011a7afdeff8c10dea8f560b858880cc55e30ddc99773fec7d91b87d3",
+   "n": 280134294407123
+  },
+  {
+   "input": "Q979d9927B6595996dAF1bB4ac337Ea77753BEcB4",
+   "name": "Pebbly Merlin dk645",
+   "slug": "pebbly-merlin-dk645",
+   "adjective": "Pebbly",
+   "creature": "Merlin",
+   "tag": "dk645",
+   "sha256": "936af963098350c96d2472d14b3a36e3fdb5c88ead32f741e8d8e1a8a19c269e",
+   "n": 248114382120606
+  },
+  {
+   "input": "QBb8Caf6B8D69D2cc83D970c268d1CC81d858F903",
+   "name": "Nibbling Gannet de586",
+   "slug": "nibbling-gannet-de586",
+   "adjective": "Nibbling",
+   "creature": "Gannet",
+   "tag": "de586",
+   "sha256": "7a207e3dd35c77b34faa9c0231239240f753aaa2ec9572f08e446e6641a1f626",
+   "n": 121385466852902
+  },
+  {
+   "input": "Q40bF17896ceEA45FB7F1Db57A6E305D3A5b02f14",
+   "name": "Munching Whiting q5993",
+   "slug": "munching-whiting-q5993",
+   "adjective": "Munching",
+   "creature": "Whiting",
+   "tag": "q5993",
+   "sha256": "a7d21e98b9b4e4575667fcece68eb2371342bdf10516efd7761644ffb747f5e0",
+   "n": 75865082295776
+  },
+  {
+   "input": "Q06E71a5a4F6B10925DBaB231b4E808B8369f99EF",
+   "name": "Prancing Gecko ra797",
+   "slug": "prancing-gecko-ra797",
+   "adjective": "Prancing",
+   "creature": "Gecko",
+   "tag": "ra797",
+   "sha256": "0e9fc7dea61d219f51a64216f6a6ec2891fd19e838124934cb523efa0782f702",
+   "n": 69243588769538
+  },
+  {
+   "input": "Q9fbA1A04B672f4cE140C97a2149AB7ad68C27e5e",
+   "name": "Plum Robin de778",
+   "slug": "plum-robin-de778",
+   "adjective": "Plum",
+   "creature": "Robin",
+   "tag": "de778",
+   "sha256": "4e795c4d1ebef7225531b52981f055a130132e00c6f2b949d8769b5a41b54d2e",
+   "n": 170811951762734
+  },
+  {
+   "input": "Q09CE9B10273Ff29a34abc12366706eB7C7Bd7fC5",
+   "name": "Drifting Seahorse ch375",
+   "slug": "drifting-seahorse-ch375",
+   "adjective": "Drifting",
+   "creature": "Seahorse",
+   "tag": "ch375",
+   "sha256": "80e42bf2daa48cf698bd89a588e34954ed097af224d4f323752eedd27150b3ac",
+   "n": 261488100029356
+  },
+  {
+   "input": "Q0798aFdfEE89E9bbEB07B0eBBEdC3CEC5829384B",
+   "name": "Smart Shrew t2853",
+   "slug": "smart-shrew-t2853",
+   "adjective": "Smart",
+   "creature": "Shrew",
+   "tag": "t2853",
+   "sha256": "ad583d3378e5526742a3bdbad24161f69d1465b6b7e1fe34f251a0bd888ba102",
+   "n": 176735900115202
+  },
+  {
+   "input": "Q2E0259b4ddCBE8b16e1b97A5344B35e314937ED3",
+   "name": "Nifty Leafcutter g5928",
+   "slug": "nifty-leafcutter-g5928",
+   "adjective": "Nifty",
+   "creature": "Leafcutter",
+   "tag": "g5928",
+   "sha256": "8c0416a19abe73d0e6fde0ccb99a024bb132effa7f744b8e8df1770fb370c1c3",
+   "n": 130909318726083
+  },
+  {
+   "input": "QA4B914d57d404EFD945d7772b18dCD1872B4859C",
+   "name": "Rummaging Underwing f7855",
+   "slug": "rummaging-underwing-f7855",
+   "adjective": "Rummaging",
+   "creature": "Underwing",
+   "tag": "f7855",
+   "sha256": "8ae25fc515e3de82e94deb678ddf96c21dd42ff1fb66586ca24095bdd2efb7b8",
+   "n": 164642520283064
+  },
+  {
+   "input": "Q6658a9246A924A41fD4d374E3E5dA800740ADc1F",
+   "name": "Sugary Llama mq535",
+   "slug": "sugary-llama-mq535",
+   "adjective": "Sugary",
+   "creature": "Llama",
+   "tag": "mq535",
+   "sha256": "6cf5e158ea84c8ca846ee4c6454b702c2bf3e9076e1c5232da929996e581995a",
+   "n": 168873374619994
+  },
+  {
+   "input": "Q6D34bC0a1b5c8Ac0714e31Bc2F3d2F04ab02F065",
+   "name": "Sunny Walrus p8969",
+   "slug": "sunny-walrus-p8969",
+   "adjective": "Sunny",
+   "creature": "Walrus",
+   "tag": "p8969",
+   "sha256": "bd6510770f489e499298e9fca63078534621c751653a3cfea4f34bcfe680d034",
+   "n": 83356297515060
+  },
+  {
+   "input": "Q1770EB20664f2D88c9E093d7a3dd57FF318D9eee",
+   "name": "Cobalt Dugong 8z757",
+   "slug": "cobalt-dugong-8z757",
+   "adjective": "Cobalt",
+   "creature": "Dugong",
+   "tag": "8z757",
+   "sha256": "40c1a87661c4a5cd89050e60cbc8a7ac06ec855c593dc866eb5e2ebb7f184bbe",
+   "n": 51382826060734
+  },
+  {
+   "input": "Q62426f2d1aB33a419A33641d9a892498C52d1368",
+   "name": "Blustery Turnstone mt685",
+   "slug": "blustery-turnstone-mt685",
+   "adjective": "Blustery",
+   "creature": "Turnstone",
+   "tag": "mt685",
+   "sha256": "6f897ae070905f189176e60b6a0c1b21c1140314844781faed7705e915aa1534",
+   "n": 6498648986932
+  },
+  {
+   "input": "Q413c4A8240AF2BcaD6a043bdE803E7E8f8f273f7",
+   "name": "Thawing Lapwing nw679",
+   "slug": "thawing-lapwing-nw679",
+   "adjective": "Thawing",
+   "creature": "Lapwing",
+   "tag": "nw679",
+   "sha256": "86b757be769d903d9074947945754c2ab424ccfa505da33e8ba62bd946295731",
+   "n": 48212185012017
+  },
+  {
+   "input": "Qb940741aC219954354720A7F13e846406851b33A",
+   "name": "Sprinting Chub rz224",
+   "slug": "sprinting-chub-rz224",
+   "adjective": "Sprinting",
+   "creature": "Chub",
+   "tag": "rz224",
+   "sha256": "4432cbf6675acd17b16d880206e13f925e3b92c766e788a22d332d0177c507fd",
+   "n": 49484327618557
+  },
+  {
+   "input": "Q3d8303D6C4926EA4364459b8743400c1208C772F",
+   "name": "Giant Springbok tw939",
+   "slug": "giant-springbok-tw939",
+   "adjective": "Giant",
+   "creature": "Springbok",
+   "tag": "tw939",
+   "sha256": "d4640f233e82bbb55b890c1808586213c9d26fd9eda2730aa54b039f4892a9ac",
+   "n": 3982652254636
+  },
+  {
+   "input": "QB272279B07f24a0031aF1e2be27678F75D23898C",
+   "name": "Honest Grayling u7873",
+   "slug": "honest-grayling-u7873",
+   "adjective": "Honest",
+   "creature": "Grayling",
+   "tag": "u7873",
+   "sha256": "532e2c9197b93b5cc44aaa2e0434f560a8a0d700ed484d802fcf38ddd942dd5c",
+   "n": 62525483965788
+  },
+  {
+   "input": "QD2D101999DeF6b224d3db8323DDD7B6E313180f1",
+   "name": "Stern Marlin dw363",
+   "slug": "stern-marlin-dw363",
+   "adjective": "Stern",
+   "creature": "Marlin",
+   "tag": "dw363",
+   "sha256": "b14aea66a52eed59724964767c1cf9da57612342857b00aa595d34c341bff093",
+   "n": 58013226365075
+  },
+  {
+   "input": "Qa09a90810B85D54F37847d9242bf2C288F0f7DE6",
+   "name": "Swaying Budgie km873",
+   "slug": "swaying-budgie-km873",
+   "adjective": "Swaying",
+   "creature": "Budgie",
+   "tag": "km873",
+   "sha256": "1d2c2964105570ad9f9f06632f6b9982857ec4f2ef793c4171aa04dcb5343a1c",
+   "n": 5345979415068
+  },
+  {
+   "input": "Q05B44513e1A35CB646Cbc3EB9F7714Ecb14e6cDE",
+   "name": "Gooey Nautilus 5x257",
+   "slug": "gooey-nautilus-5x257",
+   "adjective": "Gooey",
+   "creature": "Nautilus",
+   "tag": "5x257",
+   "sha256": "b75c2e856e4e9ab677e5cef5417c955c16545b83867656b030fbe2b15dd45842",
+   "n": 249251411286082
+  },
+  {
+   "input": "Q8A21F7E72d92B78FF15C2b2aA8419d4b3e701d70",
+   "name": "Serious Heron mu958",
+   "slug": "serious-heron-mu958",
+   "adjective": "Serious",
+   "creature": "Heron",
+   "tag": "mu958",
+   "sha256": "b50a3e4ba26686817a8daae19b69cdba8e6b0aa621cca7e112d1cb3f2587b017",
+   "n": 223472073027607
+  },
+  {
+   "input": "Q1e7c4a90A4fc4b4ADf597a656627B2D5E7fDeEa1",
+   "name": "Bulky Wigeon fc828",
+   "slug": "bulky-wigeon-fc828",
+   "adjective": "Bulky",
+   "creature": "Wigeon",
+   "tag": "fc828",
+   "sha256": "b34ffe27d2cafdb4666e64d9ec10aab44326e9e515c69c7fec43cf0c22a66914",
+   "n": 227651027888404
+  },
+  {
+   "input": "QF9BB2A57E095C879e654904a88D26fC6398F8b54",
+   "name": "Zonked Ling 6h256",
+   "slug": "zonked-ling-6h256",
+   "adjective": "Zonked",
+   "creature": "Ling",
+   "tag": "6h256",
+   "sha256": "bc7ce6e8510450a524db7c510e9920b38d9220b69cf94d486fa132307e48722c",
+   "n": 55183858496044
+  },
+  {
+   "input": "Qa755A11a8cEbf468A9Af0443452d6e51E9bF6f81",
+   "name": "Fuzzy Gurnard ze783",
+   "slug": "fuzzy-gurnard-ze783",
+   "adjective": "Fuzzy",
+   "creature": "Gurnard",
+   "tag": "ze783",
+   "sha256": "4fb0619c80fc80444fb1b1a26546c49a4175072857af2357da0bc4ea4bd1e4e0",
+   "n": 216510573438176
+  },
+  {
+   "input": "Q23322B7721E306cc01c7D9F27BbB8E164f439Ec0",
+   "name": "Tangy Centipede ap978",
+   "slug": "tangy-centipede-ap978",
+   "adjective": "Tangy",
+   "creature": "Centipede",
+   "tag": "ap978",
+   "sha256": "8ff5cf73bef641a61fcc831765623bee3e2545edf9eeb6f2ac552b5ed0769983",
+   "n": 47686224353667
+  },
+  {
+   "input": "",
+   "name": "Fringed Osprey wv263",
+   "slug": "fringed-osprey-wv263",
+   "adjective": "Fringed",
+   "creature": "Osprey",
+   "tag": "wv263",
+   "sha256": "665ab6a041e9a4a6d04574d30f450c7815f4ec93ade1d43cd1fa8cc13a1dbd27",
+   "n": 154761531604263,
+   "note": "Any ASCII string is valid input"
+  },
+  {
+   "input": "q",
+   "name": "Brisk Jackdaw pb592",
+   "slug": "brisk-jackdaw-pb592",
+   "adjective": "Brisk",
+   "creature": "Jackdaw",
+   "tag": "pb592",
+   "sha256": "81dac065b0272693f721441d66985b3429e3844cea02ed5a5199087616ac438e",
+   "n": 9303279551374,
+   "note": "Any ASCII string is valid input"
+  },
+  {
+   "input": "Q",
+   "name": "Brisk Jackdaw pb592",
+   "slug": "brisk-jackdaw-pb592",
+   "adjective": "Brisk",
+   "creature": "Jackdaw",
+   "tag": "pb592",
+   "sha256": "81dac065b0272693f721441d66985b3429e3844cea02ed5a5199087616ac438e",
+   "n": 9303279551374,
+   "note": "Any ASCII string is valid input"
+  },
+  {
+   "input": "0x0000000000000000000000000000000000000000",
+   "name": "Ready Spadefoot vj542",
+   "slug": "ready-spadefoot-vj542",
+   "adjective": "Ready",
+   "creature": "Spadefoot",
+   "tag": "vj542",
+   "sha256": "6afb955d87134d291ed93a3d18888661a60b58fff1bd4861f1db982699e6dfab",
+   "n": 167291558223787,
+   "note": "Any ASCII string is valid input"
+  },
+  {
+   "input": "hello world",
+   "name": "Bouncy Shrimp 4u759",
+   "slug": "bouncy-shrimp-4u759",
+   "adjective": "Bouncy",
+   "creature": "Shrimp",
+   "tag": "4u759",
+   "sha256": "7625126fff1904c57051ee0464d88dfb71b39194ab8e5cdcb93d47bb2d5b00c9",
+   "n": 78869245395145,
+   "note": "Any ASCII string is valid input"
+  },
+  {
+   "input": " Qabc",
+   "name": "Frizzy Minnow mi776",
+   "slug": "frizzy-minnow-mi776",
+   "adjective": "Frizzy",
+   "creature": "Minnow",
+   "tag": "mi776",
+   "sha256": "22b950b0484052be3d9a16a8956b3ffeae28bd71d248190c815f7e5a85c61175",
+   "n": 138927256506741,
+   "note": "Whitespace is NOT trimmed: it is part of the input"
+  },
+  {
+   "input": "Qabc ",
+   "name": "Crispy Shrew 6d778",
+   "slug": "crispy-shrew-6d778",
+   "adjective": "Crispy",
+   "creature": "Shrew",
+   "tag": "6d778",
+   "sha256": "4eff6f0a8b0819cff330da9b8bbf1d73e0c89c6ef811fb9ed9aecf5a3e0b97c7",
+   "n": 227986494953415,
+   "note": "Whitespace is NOT trimmed: it is part of the input"
+  },
+  {
+   "input": "Q3283eb58e7be8502b7fe6c74088a0a799fd5d",
+   "name": "Puttering Butterfly xd565",
+   "slug": "puttering-butterfly-xd565",
+   "adjective": "Puttering",
+   "creature": "Butterfly",
+   "tag": "xd565",
+   "sha256": "fe7ffe4dc4b32a39432e39cd6af4664aa55467367171ff85e5f8e9c63aec077d",
+   "n": 257037601343357,
+   "note": "Hash message is 55 bytes: a SHA-256 padding boundary"
+  },
+  {
+   "input": "Q0f6adb739f8eed7bb9ca5483fe62d916b0544c",
+   "name": "Peach Moth 79383",
+   "slug": "peach-moth-79383",
+   "adjective": "Peach",
+   "creature": "Moth",
+   "tag": "79383",
+   "sha256": "db35ef3ab993a97e27eae46968f4d20bc89ca0aa63f041de948a94e3feedcd11",
+   "n": 163706955484433,
+   "note": "Hash message is 56 bytes: a SHA-256 padding boundary"
+  },
+  {
+   "input": "Qc05c15b7e6d28eb8f6e4b03dac16bc3a41f8d2247146cb",
+   "name": "Nervy Moray ij863",
+   "slug": "nervy-moray-ij863",
+   "adjective": "Nervy",
+   "creature": "Moray",
+   "tag": "ij863",
+   "sha256": "9e2b758c1d997cf73b9afba1b2a43dfa0bd30d185da33fe1b0e0eccc9452ef1d",
+   "n": 260363405946653,
+   "note": "Hash message is 64 bytes: a SHA-256 padding boundary"
+  },
+  {
+   "input": "Q4a1ae1f1f12efe2ca5b47abd8844e9ad7dad7b4453e2aaed2a2dd92597c8abbf4a1ae1f1f12efe2ca5b47abd8844e9ad7dad7",
+   "name": "Silky Warbler rw659",
+   "slug": "silky-warbler-rw659",
+   "adjective": "Silky",
+   "creature": "Warbler",
+   "tag": "rw659",
+   "sha256": "31f0726ddbb199d62cc6e612f330786e99d874ddbf9b4b10c68f6bb947b6513a",
+   "n": 118443516252474,
+   "note": "Hash message is 119 bytes: a SHA-256 padding boundary"
+  },
+  {
+   "input": "Q454c59f63cf58063c7575b673729d56e4bd5cfc1423d1d511c40e59cad7fe69f454c59f63cf58063c7575b673729d56e4bd5cf",
+   "name": "Chuffed Amberjack pa946",
+   "slug": "chuffed-amberjack-pa946",
+   "adjective": "Chuffed",
+   "creature": "Amberjack",
+   "tag": "pa946",
+   "sha256": "b2d0ba577c7fce37fba6a85a6d2e12e92d18754df3d13f388bd1b22e06ce2cb8",
+   "n": 195910752414904,
+   "note": "Hash message is 120 bytes: a SHA-256 padding boundary"
+  }
+ ],
+ "invalid": [
+  {
+   "input": "Qc0e6dd0e844e0048dcb0bd3fdcc44a970beca38é",
+   "reason": "non-ASCII character"
+  },
+  {
+   "input": "Qİabc",
+   "reason": "non-ASCII capital I with dot (lowercases differently per language)"
+  },
+  {
+   "input": "QKabc",
+   "reason": "Kelvin sign (JavaScript toLowerCase maps it to 'k')"
+  }
+ ]
+}

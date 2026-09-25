@@ -1,0 +1,34 @@
+{
+  "spec": "qrl-nicknames",
+  "version": 3,
+  "note": "Machine-readable constants for spec v3. SPEC.md is normative and wins if the two ever disagree. Frozen: any change to a value here changes names and requires a new major spec version.",
+  "input": {
+    "charset": "ASCII",
+    "normalisation": "lowercase A-Z to a-z; every other character unchanged; no trimming",
+    "non_ascii": "reject"
+  },
+  "hash": {
+    "algorithm": "SHA-256",
+    "message_prefix": "qs-nickname-v2|",
+    "message_suffix": "|0",
+    "message_encoding": "ASCII",
+    "note": "The 'v2' and '|0' in the message are frozen constants kept for compatibility with names Quantascan published under spec v2. They are not the spec version."
+  },
+  "integer": {
+    "source": "digest bytes 26 to 31 (zero-based: the last 6 bytes)",
+    "byte_order": "big-endian",
+    "bits": 48
+  },
+  "fields": [
+    { "name": "reserved",  "shift": 0,  "bits": 5 },
+    { "name": "adjective", "shift": 5,  "bits": 9, "list": "adjectives" },
+    { "name": "creature",  "shift": 14, "bits": 9, "list": "creatures" },
+    { "name": "tag_head",  "shift": 23, "bits": 10, "alphabet": "abcdefghijkmnpqrstuvwxyz23456789", "chars": 2 },
+    { "name": "tag_tail",  "shift": 33, "bits": 9,  "alphabet": "23456789", "chars": 3 }
+  ],
+  "unused_bits": "42-47",
+  "tag": "tag_head rendered, then tag_tail rendered; each rendered least-significant character first",
+  "template": "{adjective} {creature} {tag}",
+  "slug_template": "{adjective}-{creature}-{tag}, all lowercase",
+  "namespace": 137438953472
+}
