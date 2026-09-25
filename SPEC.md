@@ -5,7 +5,7 @@
 This document defines a function that turns an address into a readable name:
 
 ```
-Qc0e6dd0e844e0048dcb0bd3fdcc44a970beca38d   →   Cobalt Caddisfly tk856
+Qc0e6dd0e844e0048dcb0bd3fdcc44a970beca38d   →   Sparkly Kappa tk856
 ```
 
 It is normative. The key words MUST, MUST NOT, SHOULD and MAY are used as in
@@ -25,7 +25,7 @@ If `params.json` and this document ever disagree, this document wins.
    output is published as version 4, with version 3 left in place (see
    [VERSIONING.md](VERSIONING.md)).
 3. **Practically unique, not guaranteed unique.** The namespace holds
-   137,438,953,472 (2³⁷) names, so two addresses rarely share one (§7). A name
+   549,755,813,888 (2³⁹) names, so two addresses rarely share one (§7). A name
    is a recognition aid. The address remains the identifier.
 
 ## 2. Input
@@ -82,27 +82,40 @@ on `n`: they truncate to 32 bits. Use `Math.floor(n / 2 ** shift) % 2 ** bits`.
 
 ## 4. Fields
 
-Five fields are read from `n`, least-significant bits first:
+Seven fields are read from `n`, least-significant bits first:
 
 | Field | Bits | Shift | Values | Meaning |
 |---|---|---|---|---|
 | `reserved` | 5 | 0 | 32 | Ignored. MUST NOT be used. |
-| `adjective` | 9 | 5 | 512 | Index into `adjectives` |
-| `creature` | 9 | 14 | 512 | Index into `creatures` |
+| `adjective` | 9 | 5 | 512 | Low 9 bits of the adjective index |
+| `creature` | 9 | 14 | 512 | Low 9 bits of the creature index |
 | `tag_head` | 10 | 23 | 1,024 | Two characters from the head alphabet |
 | `tag_tail` | 9 | 33 | 512 | Three digits from the tail alphabet |
+| `adjective_high` | 1 | 42 | 2 | High bit of the adjective index |
+| `creature_high` | 1 | 43 | 2 | High bit of the creature index |
 
 ```
 field = floor(n / 2^shift) mod 2^bits
 ```
 
-Bits 42–47 are unused.
+Bits 44–47 are unused.
+
+Each word index is 10 bits, 0 to 1,023:
+
+```
+adjective_index = adjective + 512 × adjective_high
+creature_index  = creature  + 512 × creature_high
+```
+
+The high bits sit above the tag rather than next to the low bits, so that the
+low bits and the tag keep the positions they had in Quantascan's v2 names
+(§8).
 
 ## 5. Rendering
 
-**Words.** `adjective` is `adjectives[adjective]` and `creature` is
-`creatures[creature]`, both taken from `spec/v3/wordlists.json` (zero-based
-indexes). Each list has exactly 512 entries. Every entry is one ASCII word of
+**Words.** The adjective is `adjectives[adjective_index]` and the creature is
+`creatures[creature_index]`, both taken from `spec/v3/wordlists.json` (zero-based
+indexes). Each list has exactly 1,024 entries. Every entry is one ASCII word of
 3 to 12 letters with an initial capital (`^[A-Z][a-z]{2,11}$`). No word appears
 twice across the two lists.
 
@@ -146,26 +159,31 @@ message    qs-nickname-v2|qc0e6dd0e844e0048dcb0bd3fdcc44a970beca38d|0
 digest     51acd10309e91fe740eda7421b9efdf041a455e2d6cb17f040c8fe3ca8eacba7
 n          0xfe3ca8eacba7 = 279536485452711      (bytes 26..32 = the last 6 bytes)
 
-reserved   floor(n / 2^0)  mod 32   =   7    (ignored)
-adjective  floor(n / 2^5)  mod 512  =  93    -> "Cobalt"
-creature   floor(n / 2^14) mod 512  = 427    -> "Caddisfly"
-tag_head   floor(n / 2^23) mod 1024 = 337    -> 337 mod 32 = 17 "t", 10 "k"     -> "tk"
-tag_tail   floor(n / 2^33) mod 512  = 286    -> 286 mod 8 = 6 "8", 3 "5", 4 "6" -> "856"
+reserved        floor(n / 2^0)  mod 32   =   7    (ignored)
+adjective       floor(n / 2^5)  mod 512  =  93
+creature        floor(n / 2^14) mod 512  = 427
+tag_head        floor(n / 2^23) mod 1024 = 337    -> 337 mod 32 = 17 "t", 10 "k"     -> "tk"
+tag_tail        floor(n / 2^33) mod 512  = 286    -> 286 mod 8 = 6 "8", 3 "5", 4 "6" -> "856"
+adjective_high  floor(n / 2^42) mod 2    =   1
+creature_high   floor(n / 2^43) mod 2    =   1
 
-name       Cobalt Caddisfly tk856
-slug       cobalt-caddisfly-tk856
+adjective_index  93 + 512 × 1 = 605    -> "Sparkly"
+creature_index  427 + 512 × 1 = 939    -> "Kappa"
+
+name       Sparkly Kappa tk856
+slug       sparkly-kappa-tk856
 ```
 
 ## 7. Collisions
 
-The namespace is 512 × 512 × 1,024 × 512 = 2³⁷. Among `N` addresses, the
-expected number of pairs that share a name is about N² / 2³⁸:
+The namespace is 1,024 × 1,024 × 1,024 × 512 = 2³⁹. Among `N` addresses, the
+expected number of pairs that share a name is about N² / 2⁴⁰:
 
 | Addresses | Expected pairs sharing a name |
 |---|---|
-| 200,000 | 0.15 |
-| 1,000,000 | 3.6 |
-| 10,000,000 | 364 |
+| 200,000 | 0.04 |
+| 1,000,000 | 0.9 |
+| 10,000,000 | 91 |
 
 Collisions are NOT resolved. Resolving them would need a registry of every
 address, and that would break §1.1: two projects that know different sets of
@@ -174,23 +192,38 @@ avoid a collision.
 
 A name therefore MUST NOT be used as a key, and SHOULD be displayed next to at
 least a shortened form of the address. The words alone, without the tag, cover
-only 262,144 combinations and are not an identifier.
+only 1,048,576 combinations and are not an identifier.
 
 ## 8. Compatibility with Quantascan v2
 
-Quantascan's v2 names consisted of the two words plus the two-character tag
-head. For every address whose v2 name was its first candidate, the v3 name is
-the v2 name followed by three digits:
+Quantascan's v2 names consisted of two words from 512-word lists plus the
+two-character tag head. v3 keeps those lists as the first 512 entries of its
+1,024-word lists and reads the same bits for the low index and the tag. When
+both high bits are 0, which is the case for about a quarter of all addresses,
+the v3 name is the v2 name followed by three digits:
 
 ```
-v2   Cobalt Caddisfly tk
-v3   Cobalt Caddisfly tk856
+v2   Honking Bobcat sm
+v3   Honking Bobcat sm956
 ```
+
+The other addresses keep their tag head but get at least one word from the
+second half of a list. Six v2 words were also replaced in place before v3 was
+published, because they were misfiled or read badly in a wallet context:
+
+| Index | v2 | v3 |
+|---|---|---|
+| adjective 130 | Kookaburra | Tawny |
+| adjective 150 | Brand | Retro |
+| adjective 179 | Shady | Dewy |
+| adjective 256 | Rugged | Rocky |
+| creature 125 | Tawny | Kookaburra |
+| creature 359 | Coralline | Sponge |
 
 v2 resolved collisions through a central registry. Around 0.04% of addresses
 received an alternative v2 name, and those addresses get an unrelated name in
-v3. [`spec/v3/v2-compat.json`](spec/v3/v2-compat.json) lists 86 addresses whose
-v2 names are prefixes of their v3 names.
+v3. [`spec/v3/v2-compat.json`](spec/v3/v2-compat.json) lists 21 addresses whose
+v2 names are still prefixes of their v3 names.
 
 ## 9. Conformance
 

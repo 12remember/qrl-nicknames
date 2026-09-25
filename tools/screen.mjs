@@ -49,8 +49,9 @@ const STEMS = [
   "cocain", "heroin", "junkie",
   // ableist / slurs
   "retard", "spastic", "cripple", "midget", "tranny", "fag", "dyke",
-  // finance risk: a wallet named "Scam ..." reads as an accusation
-  "scam", "ponzi", "rugpull",
+  // finance risk: a wallet named "Scam ..." or "Rugged ..." reads as an accusation
+  "scam", "ponzi", "rugpull", "rugged", "fraud", "crook", "thief", "stolen", "hacker",
+  "phish", "launder", "shady", "sketchy", "dodgy", "bogus", "bankrupt", "rekt",
 ];
 
 /** Short words that cannot be substring-matched without flagging half the
@@ -86,7 +87,8 @@ for (const list of ["adjectives", "creatures"]) {
   }
 }
 blocking += wordHits.length;
-report(!wordHits.length, "words", wordHits.length ? wordHits.join(", ") : "1,024 words clean");
+const wordCount = words.adjectives.length + words.creatures.length;
+report(!wordHits.length, "words", wordHits.length ? wordHits.join(", ") : `${wordCount.toLocaleString("en-US")} words clean`);
 
 // 2. Tags -------------------------------------------------------------------
 const head = params.fields.find((f) => f.name === "tag_head");

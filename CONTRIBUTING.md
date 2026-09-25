@@ -31,6 +31,8 @@ Common mistakes that the vectors will catch:
 - trimming whitespace;
 - using 32-bit integer operations on the 48-bit value;
 - reading the wrong digest bytes (it is bytes 26 to 31, the last six);
+- forgetting the high word bits (42 and 43): each word index is
+  `low + 512 × high`, and each list has 1,024 entries;
 - rendering the tag most-significant character first (it is least-significant
   first);
 - SHA-256 padding off by a block at message lengths 55 and 119.

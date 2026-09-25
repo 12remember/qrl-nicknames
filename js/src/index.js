@@ -62,8 +62,11 @@ export function nicknameParts(address) {
   let n = 0;
   for (let i = 26; i < 32; i++) n = n * 256 + digest[i];
 
-  const adjective = ADJECTIVES[field(n, 5, 9)];
-  const creature = CREATURES[field(n, 14, 9)];
+  // Each word index is 10 bits: 9 low bits next to each other, plus one high
+  // bit from the top of n. High bit 0 selects the first 512 words, which keeps
+  // those names identical to Quantascan's v2 names.
+  const adjective = ADJECTIVES[field(n, 5, 9) + 512 * field(n, 42, 1)];
+  const creature = CREATURES[field(n, 14, 9) + 512 * field(n, 43, 1)];
   const tag = render(field(n, 23, 10), HEAD, 2) + render(field(n, 33, 9), TAIL, 3);
   const words = `${adjective} ${creature}`;
   return {
@@ -77,7 +80,7 @@ export function nicknameParts(address) {
 }
 
 /**
- * The name for an address, e.g. "Cobalt Caddisfly tk856".
+ * The name for an address, e.g. "Sparkly Kappa tk856".
  *
  * @param {string} address any ASCII string; case-insensitive, not trimmed
  * @returns {string}
@@ -87,7 +90,7 @@ export function nickname(address) {
 }
 
 /**
- * The URL-safe form, e.g. "cobalt-caddisfly-tk856". Always hyphenated: joining
+ * The URL-safe form, e.g. "sparkly-kappa-tk856". Always hyphenated: joining
  * the words without a separator can form unintended words across the boundary.
  *
  * @param {string} address any ASCII string; case-insensitive, not trimmed

@@ -47,7 +47,7 @@ if (words.version !== 3 || params.version !== 3) problems.push("spec files must 
 const seen = new Map();
 for (const [name, list] of Object.entries(LISTS)) {
   if (!Array.isArray(list)) { problems.push(`${name} missing`); continue; }
-  if (list.length !== 512) problems.push(`${name} has ${list.length} entries, expected 512`);
+  if (list.length !== 1024) problems.push(`${name} has ${list.length} entries, expected 1024`);
   for (const w of list) {
     if (!/^[A-Z][a-z]{2,11}$/.test(w)) problems.push(`${name}: "${w}" is not one capitalised ASCII word of 3-12 letters`);
     const k = w.toLowerCase();
@@ -57,14 +57,18 @@ for (const [name, list] of Object.entries(LISTS)) {
 }
 
 let nextShift = 0;
+const listBits = {};
 for (const f of params.fields) {
   if (f.shift !== nextShift) problems.push(`field ${f.name} starts at bit ${f.shift}, expected ${nextShift}`);
   nextShift = f.shift + f.bits;
-  if (f.list && LISTS[f.list]?.length !== 2 ** f.bits) problems.push(`field ${f.name}: list size != 2^${f.bits}`);
+  if (f.list) listBits[f.list] = (listBits[f.list] ?? 0) + f.bits;
   if (f.alphabet) {
     if (new Set(f.alphabet).size !== f.alphabet.length) problems.push(`field ${f.name}: duplicate alphabet characters`);
     if (f.alphabet.length ** f.chars !== 2 ** f.bits) problems.push(`field ${f.name}: alphabet^chars != 2^bits`);
   }
+}
+for (const [name, bits] of Object.entries(listBits)) {
+  if (LISTS[name]?.length !== 2 ** bits) problems.push(`${name}: list size != 2^${bits} (sum of its fields)`);
 }
 if (nextShift > params.integer.bits) problems.push(`fields use ${nextShift} bits, only ${params.integer.bits} available`);
 
@@ -98,8 +102,8 @@ function reference(input) {
   const digest = createHash("sha256").update(message, "utf8").digest();
   let n = 0;
   for (let i = 26; i < 32; i++) n = n * 256 + digest[i];
-  const adjective = LISTS.adjectives[field(n, F.adjective)];
-  const creature = LISTS.creatures[field(n, F.creature)];
+  const adjective = LISTS.adjectives[field(n, F.adjective) + 512 * field(n, F.adjective_high)];
+  const creature = LISTS.creatures[field(n, F.creature) + 512 * field(n, F.creature_high)];
   const tag = render(field(n, F.tag_head), F.tag_head) + render(field(n, F.tag_tail), F.tag_tail);
   return { message, digest: digest.toString("hex"), n, adjective, creature, tag };
 }
@@ -174,7 +178,8 @@ for (const bad of invalid) {
 }
 
 // ---------------------------------------------------------------------------
-// 4. Compatibility with Quantascan spec v2: v3 only appends digits to the tag.
+// 4. Compatibility with Quantascan spec v2: for addresses whose high bits are
+//    both 0 (about a quarter), v3 only appends digits to the v2 name.
 // ---------------------------------------------------------------------------
 
 const compat = JSON.parse(readText(join(SPEC, "v2-compat.json"))).vectors;

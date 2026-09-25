@@ -2,17 +2,17 @@
 export declare const SPEC_VERSION: 3;
 
 export interface NicknameParts {
-  /** First word, e.g. "Cobalt". */
+  /** First word, e.g. "Sparkly". */
   adjective: string;
-  /** Second word, e.g. "Caddisfly". */
+  /** Second word, e.g. "Kappa". */
   creature: string;
   /** Five characters: two from `abcdefghijkmnpqrstuvwxyz23456789`, then three digits from `2-9`. */
   tag: string;
-  /** The two words, e.g. "Cobalt Caddisfly". Not an identifier on its own. */
+  /** The two words, e.g. "Sparkly Kappa". Not an identifier on its own. */
   words: string;
-  /** The full name, e.g. "Cobalt Caddisfly tk856". */
+  /** The full name, e.g. "Sparkly Kappa tk856". */
   name: string;
-  /** Lowercase, hyphenated, e.g. "cobalt-caddisfly-tk856". */
+  /** Lowercase, hyphenated, e.g. "sparkly-kappa-tk856". */
   slug: string;
 }
 
@@ -25,13 +25,13 @@ export interface NicknameParts {
 export declare function nicknameParts(address: string): NicknameParts;
 
 /**
- * The name for an address, e.g. "Cobalt Caddisfly tk856".
+ * The name for an address, e.g. "Sparkly Kappa tk856".
  * @param address any ASCII string; case-insensitive, not trimmed
  */
 export declare function nickname(address: string): string;
 
 /**
- * The URL-safe form, e.g. "cobalt-caddisfly-tk856".
+ * The URL-safe form, e.g. "sparkly-kappa-tk856".
  * @param address any ASCII string; case-insensitive, not trimmed
  */
 export declare function nicknameSlug(address: string): string;

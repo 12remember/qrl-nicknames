@@ -7,7 +7,7 @@ every implementation of the spec returns the same name for the same address,
 forever.
 
     >>> nickname("Qc0e6dd0e844e0048dcb0bd3fdcc44a970beca38d")
-    'Cobalt Caddisfly tk856'
+    'Sparkly Kappa tk856'
 """
 
 import hashlib
@@ -64,8 +64,11 @@ def nickname_parts(address: str) -> NicknameParts:
     non-ASCII input.
     """
     n = int.from_bytes(hashlib.sha256(_message(address)).digest()[26:32], "big")
-    adjective = ADJECTIVES[(n >> 5) & 0x1FF]
-    creature = CREATURES[(n >> 14) & 0x1FF]
+    # Each word index is 10 bits: 9 low bits next to each other, plus one high
+    # bit from the top of n. High bit 0 selects the first 512 words, which keeps
+    # those names identical to Quantascan's v2 names.
+    adjective = ADJECTIVES[((n >> 5) & 0x1FF) | (((n >> 42) & 1) << 9)]
+    creature = CREATURES[((n >> 14) & 0x1FF) | (((n >> 43) & 1) << 9)]
     tag = _render((n >> 23) & 0x3FF, _HEAD, 2) + _render((n >> 33) & 0x1FF, _TAIL, 3)
     words = f"{adjective} {creature}"
     return NicknameParts(
@@ -79,12 +82,12 @@ def nickname_parts(address: str) -> NicknameParts:
 
 
 def nickname(address: str) -> str:
-    """The name for an address, e.g. ``'Cobalt Caddisfly tk856'``."""
+    """The name for an address, e.g. ``'Sparkly Kappa tk856'``."""
     return nickname_parts(address).name
 
 
 def nickname_slug(address: str) -> str:
-    """The URL-safe form, e.g. ``'cobalt-caddisfly-tk856'``.
+    """The URL-safe form, e.g. ``'sparkly-kappa-tk856'``.
 
     Always hyphenated: joining the words without a separator can form
     unintended words across the boundary.

@@ -20,15 +20,18 @@
     "bits": 48
   },
   "fields": [
-    { "name": "reserved",  "shift": 0,  "bits": 5 },
-    { "name": "adjective", "shift": 5,  "bits": 9, "list": "adjectives" },
-    { "name": "creature",  "shift": 14, "bits": 9, "list": "creatures" },
-    { "name": "tag_head",  "shift": 23, "bits": 10, "alphabet": "abcdefghijkmnpqrstuvwxyz23456789", "chars": 2 },
-    { "name": "tag_tail",  "shift": 33, "bits": 9,  "alphabet": "23456789", "chars": 3 }
+    { "name": "reserved",       "shift": 0,  "bits": 5 },
+    { "name": "adjective",      "shift": 5,  "bits": 9, "list": "adjectives", "part": "low" },
+    { "name": "creature",       "shift": 14, "bits": 9, "list": "creatures", "part": "low" },
+    { "name": "tag_head",       "shift": 23, "bits": 10, "alphabet": "abcdefghijkmnpqrstuvwxyz23456789", "chars": 2 },
+    { "name": "tag_tail",       "shift": 33, "bits": 9,  "alphabet": "23456789", "chars": 3 },
+    { "name": "adjective_high", "shift": 42, "bits": 1, "list": "adjectives", "part": "high" },
+    { "name": "creature_high",  "shift": 43, "bits": 1, "list": "creatures", "part": "high" }
   ],
-  "unused_bits": "42-47",
+  "unused_bits": "44-47",
+  "index": "adjectives[adjective + 512 * adjective_high], creatures[creature + 512 * creature_high]",
   "tag": "tag_head rendered, then tag_tail rendered; each rendered least-significant character first",
   "template": "{adjective} {creature} {tag}",
   "slug_template": "{adjective}-{creature}-{tag}, all lowercase",
-  "namespace": 137438953472
+  "namespace": 549755813888
 }

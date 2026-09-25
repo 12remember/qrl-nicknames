@@ -3,10 +3,15 @@
 Readable, deterministic names for QRL addresses. Same address, same name,
 in every project. Implements [spec v3](https://github.com/12remember/qrl-nicknames/blob/main/SPEC.md).
 
+> **Not on npm yet.** `npm install qrl-nicknames` does not work until the
+> package is published. Copy `js/src/`, install from a clone
+> (`npm install ./qrl-nicknames/js`) or from a tarball made with `npm pack`.
+> See [Installation](https://github.com/12remember/qrl-nicknames#installation).
+
 ```js
 import { nickname } from "qrl-nicknames";
 
-nickname("Qc0e6dd0e844e0048dcb0bd3fdcc44a970beca38d"); // "Cobalt Caddisfly tk856"
+nickname("Qc0e6dd0e844e0048dcb0bd3fdcc44a970beca38d"); // "Sparkly Kappa tk856"
 ```
 
 - Zero dependencies, ES module, TypeScript types included.
@@ -17,8 +22,8 @@ nickname("Qc0e6dd0e844e0048dcb0bd3fdcc44a970beca38d"); // "Cobalt Caddisfly tk85
 
 | Function | Returns |
 |---|---|
-| `nickname(address)` | `"Cobalt Caddisfly tk856"` |
-| `nicknameSlug(address)` | `"cobalt-caddisfly-tk856"` |
+| `nickname(address)` | `"Sparkly Kappa tk856"` |
+| `nicknameSlug(address)` | `"sparkly-kappa-tk856"` |
 | `nicknameParts(address)` | `{ adjective, creature, tag, words, name, slug }` |
 | `SPEC_VERSION` | `3` |
 

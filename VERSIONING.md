@@ -19,6 +19,12 @@ Any such change is a new spec version, published under a new directory
 the repository and keep working. A project that pinned v3 keeps producing v3
 names indefinitely.
 
+A spec version counts as published with the first package release that
+implements it. Spec v3 is final from release `3.0.0`. Before that release its
+word lists were extended from 512 to 1,024 words (see
+[CHANGELOG.md](CHANGELOG.md)), so a copy taken from `main` before the release
+can give different names.
+
 Changes that do NOT alter output are allowed within a version and are recorded
 in the changelog: clearer wording in `SPEC.md`, extra test vectors, extra notes.
 Adding a vector never changes an existing one: `tools/build.mjs --check` fails

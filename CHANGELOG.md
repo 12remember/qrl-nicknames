@@ -14,11 +14,21 @@ First release as a standalone project. Implements **spec v3**.
 - The name is now a pure function of the address. The v2 collision registry
   and its exception list are gone: no API call is needed to get the exact name.
 - The tag grows from two characters to five: the same two characters as v2,
-  followed by three digits from `2–9`. The namespace grows from 2²⁸ to 2³⁷
-  (137 billion names). Among a million addresses, about 3.6 pairs share a name,
-  down from about 1,860.
-- For every address that v2 did not have to rename, the v3 name is the v2 name
-  plus three digits, e.g. `Cobalt Caddisfly tk` → `Cobalt Caddisfly tk856`.
+  followed by three digits from `2–9`.
+- Both word lists grow from 512 to 1,024 words. The v2 words stay at their
+  index; the 512 new words per list are added after them and are selected by
+  two previously unused bits (42 and 43). New creatures include more mammals,
+  birds, fish and insects, dog and horse breeds, dinosaurs and creatures from
+  myth and folklore. The word pairs grow from 262,144 to 1,048,576.
+- The namespace grows from 2²⁸ to 2³⁹ (550 billion names). Among a million
+  addresses, about 0.9 pairs share a name, down from about 1,860.
+- Six v2 words are replaced in place: `Kookaburra` (an adjective) and `Tawny`
+  (a creature) swap lists, `Brand` becomes `Retro`, `Coralline` (an alga)
+  becomes `Sponge`, and `Shady` and `Rugged` (in crypto: rug-pulled) become
+  `Dewy` and `Rocky`, because a wallet name must not read as an accusation.
+- When both new bits are 0 (about a quarter of all addresses), the v3 name is
+  the v2 name plus three digits, e.g. `Honking Bobcat sm` → `Honking Bobcat sm956`.
+  Other addresses keep their tag head and get at least one new word.
 - Input rules are explicit: ASCII only (anything else is rejected), `A–Z`
   lowercased, no trimming.
 - The canonical input for QRL is documented: `Q` + hex. A QRL 2.0 address shown
@@ -33,7 +43,8 @@ First release as a standalone project. Implements **spec v3**.
 - Conformance suite of 174 vectors, including SHA-256 padding boundaries, plus
   3 inputs that must be rejected.
 - Content screen over every word, every one of the 524,288 tags and 300,000
-  rendered names.
+  rendered names. Its finance-risk list now also blocks words such as
+  `rugged`, `shady`, `fraud` and `stolen`.
 
 ### Fixed
 

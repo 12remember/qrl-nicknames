@@ -1,165 +1,37 @@
 {
- "note": "Quantascan v2 names (attempt 0). Every v3 name MUST start with the v2 name: v3 only appends three digits to the tag.",
+ "note": "Quantascan v2 names (attempt 0) that are still exact prefixes of their v3 name. This holds for an address when both high word bits (42 and 43) are 0, about a quarter of all addresses: the v3 name is then the v2 name plus three digits. Other addresses picked a word from the second half of a list and got a different name.",
  "vectors": [
   {
    "address": "Q2442ffeede6ab0781f47fb14845f2683237ccb5e6cd26af1d2be97f972d24b9e2442ffeede6ab0",
    "v2_name": "Blinking Stallion ye"
   },
   {
-   "address": "Q7fc3c2c1eb9394af89bee45c15f85978439e1a17",
-   "v2_name": "Flaky Whiting uv"
-  },
-  {
-   "address": "Q336e4be6f30cfa46f61ef5b3323991e17906cfee427513c00fef059ed4a9addd336e4be6f30cfa",
-   "v2_name": "Sulky Tegu 65"
-  },
-  {
-   "address": "Q899495bbab1c65f7145b3cd960010db25dda42ad",
-   "v2_name": "Chirping Rabbit gp"
-  },
-  {
-   "address": "Qd7837a735e63d4506ca548bc37308f3702329c20cdba0312a75ea7e971faccb4d7837a735e63d4",
-   "v2_name": "Steamy Boa 48"
-  },
-  {
-   "address": "Q9b531443d9d646ce4b32263a74ea384c0d1f871f",
-   "v2_name": "Blinking Gopher ap"
-  },
-  {
-   "address": "Qd93d69a1bf9d577d2b9953a99fab4936773afb05",
-   "v2_name": "Sizzling Barnacle d7"
-  },
-  {
    "address": "Qb9e2abdb9e65c233bd4cd67f3f7e2d16aebf6bf08e29720f5760f420f557e54bb9e2abdb9e65c2",
    "v2_name": "Chubby Wallaby m9"
-  },
-  {
-   "address": "Q3d199396b28eb4c9a417b1849aa3bb6697681c1c",
-   "v2_name": "Skittering Gharial e3"
   },
   {
    "address": "Qbcafb082d44ccafc7ee8a248d15988899ef0d7ee06ebe417bbbb90880ad05a7fbcafb082d44cca",
    "v2_name": "Creaking Blackcap 92"
   },
   {
-   "address": "Q8f43abe8f7d4858a3e733396acfa14efb1e4bbc3",
-   "v2_name": "Hurried Colt fw"
-  },
-  {
-   "address": "Q1812f0ee3b82f22d25f4b40761c6c1a033618e444f99bc362ea7455e4d6775171812f0ee3b82f2",
-   "v2_name": "Sizzling Capybara en"
-  },
-  {
-   "address": "Q6b17ec48b1af531344d9dc97236dfbaa01dbb643f8dc5e8e7d74893d029695a86b17ec48b1af53",
-   "v2_name": "Wild Firefly fm"
-  },
-  {
-   "address": "Q37ff015533c1d7e0f2c23891cc7acce7c145d454",
-   "v2_name": "Quick Crow gy"
-  },
-  {
-   "address": "Q2d8497ebfa326c33cf13a576d198a006c5e8cdf71c4d9f51e56aa1174930d9fb2d8497ebfa326c",
-   "v2_name": "Deft Jacamar t4"
-  },
-  {
-   "address": "Q04dc5156cc2a5e801ff4bbe4356b61488974e266",
-   "v2_name": "Violet Mussel wm"
-  },
-  {
-   "address": "Q332b9a77fff028ed11eacc633fab8d239ab85f35e0eee2520f25c0f0e598b7a9332b9a77fff028",
-   "v2_name": "Giddy Orca tb"
-  },
-  {
    "address": "Q934dd61b78d8a4dff1e1df43a5024ed4adad9650",
    "v2_name": "Honking Bobcat sm"
-  },
-  {
-   "address": "Q56eef89411ae3a5e94bd8a0b8891c3bf9684a4c8",
-   "v2_name": "Croaking Ferret ac"
   },
   {
    "address": "Q3accaca7e4d23690ffc18ffa31164d9d744dfa44ec9a088b3083c54fe28ffd913accaca7e4d236",
    "v2_name": "Peppery Ewe zg"
   },
   {
-   "address": "Q97269e26cf25371ca8c7a86c69228becef1f0122",
-   "v2_name": "Skipping Olm gh"
-  },
-  {
    "address": "Q6ffe84956dce9ab9d7a8b7046934202565f4b26d3bb8b54ae6d46ccd1b4c00c76ffe84956dce9a",
    "v2_name": "Padded Meerkat j9"
-  },
-  {
-   "address": "Q708e65ff503b04548cb609f92cf711ff98287073",
-   "v2_name": "Prancing Warbler g7"
-  },
-  {
-   "address": "Qf888e20eb333e41ffc1e06ca6eb92e67f5866280fb596d0bf225ac740313d348f888e20eb333e4",
-   "v2_name": "Bothered Basilisk ta"
   },
   {
    "address": "Qba537982e0745909119b9f26a75da143a71881cc25e1be1750652dad031d72cbba537982e07459",
    "v2_name": "Creaking Mayfly 3v"
   },
   {
-   "address": "Qfd3d9e7aabac5a8ef89380250e5f9d0b948e0686",
-   "v2_name": "Classic Sturgeon s2"
-  },
-  {
-   "address": "Q8bb17851fe1c362ece5a8762603545618ea3c013eafed0cce5d3fd8d6bf5116b8bb17851fe1c36",
-   "v2_name": "Blustery Conch cp"
-  },
-  {
    "address": "Qab269d70a53fba6713b144a9ceb41aee28d9fe11",
    "v2_name": "Fidgety Turkey d5"
-  },
-  {
-   "address": "Qf5bc260470a2b412f29ee54a7e5dcb82552b917b7ea50a8c14d23074419b7362f5bc260470a2b4",
-   "v2_name": "Stout Caddisfly xc"
-  },
-  {
-   "address": "Q0283553882c0560c1a1deea8b67419d9d3388989",
-   "v2_name": "Golden Puffin ip"
-  },
-  {
-   "address": "Q253b228a3605b6f6027970ca0d67918ab62880fe",
-   "v2_name": "Tapping Squid gk"
-  },
-  {
-   "address": "Q41e207896763a77d346641cf1637f97686992c11c901f8a3e544e487f079a3a641e207896763a7",
-   "v2_name": "Stomping Weasel hk"
-  },
-  {
-   "address": "Qdb6a8c0e5284c371a4f3fd6ddbbdab6a15c9f7f9",
-   "v2_name": "Patient Weevil 2a"
-  },
-  {
-   "address": "Q5320b3c4fdc6e7f5097925ccffe1df8734e629c4e1dcbe976b97f9ff90b46e065320b3c4fdc6e7",
-   "v2_name": "Flimsy Condor zg"
-  },
-  {
-   "address": "Q85b633a90d95b9215fe5599729fbcb3a309187ae",
-   "v2_name": "Nifty Firefly 5t"
-  },
-  {
-   "address": "Q06bbcfc76e4ef021ac9a95ef1897d94bfb93123863396a3781a5fc6b24c9f19c06bbcfc76e4ef0",
-   "v2_name": "Sandy Mantis pb"
-  },
-  {
-   "address": "Q18d3c99c0f9a6b4d00b7f4b19d96a8f408860d66e1b6e5bd5cb161c890b2d68818d3c99c0f9a6b",
-   "v2_name": "Pouncing Woodlouse vm"
-  },
-  {
-   "address": "Qb407d99b73a86204fbc97610b077e1988d6970b0",
-   "v2_name": "Zingy Kingsnake tj"
-  },
-  {
-   "address": "Qc16a6448239e86f45995850556499d110be9f3250ac5ca4e7f5a09eb8bf7e5dfc16a6448239e86",
-   "v2_name": "Snowy Abalone fp"
-  },
-  {
-   "address": "Q55861de257a9f5b2da31c045673ac6509d47381c",
-   "v2_name": "Jumpy Centipede yy"
   },
   {
    "address": "Qb1043915c8eb8e36c68df490c965551d9108260f26da5831c5c1c835b58b028eb1043915c8eb8e",
@@ -168,18 +40,6 @@
   {
    "address": "Q6125407196c0e45a9d2b789dae278c60b88ae244",
    "v2_name": "Tough Wasp ra"
-  },
-  {
-   "address": "Q6d83ff64441c96f673163ee63df4f629fe55a511",
-   "v2_name": "Pattering Aphid nb"
-  },
-  {
-   "address": "Q8bfc1b3437d84c417240dc30c4fa159d500a23af682250b628f9af3a1b5587d48bfc1b3437d84c",
-   "v2_name": "Feathery Shrew 34"
-  },
-  {
-   "address": "Qd3e1eb3492b2b982e47fe583b6006d8996448522",
-   "v2_name": "Hurried Hellbender 46"
   },
   {
    "address": "Qd128b7bd589849b2523ee5d924dd5cbe04e8f7ed6aada1209a2e0e01b896bae6d128b7bd589849",
@@ -194,68 +54,12 @@
    "v2_name": "Whistling Kite tj"
   },
   {
-   "address": "Q8707f57dcbb28ab71fe1a74d33f82652109ffbec6c0ef7ec1b04da839655fba18707f57dcbb28a",
-   "v2_name": "Brave Ling bw"
-  },
-  {
-   "address": "Qfbbbc45f2edee0fe486a888cdd9b211e022ccd04",
-   "v2_name": "Wiggly Stonefly 49"
-  },
-  {
-   "address": "Qfb2ea545b887f6c549e5f537fa9fb0a15029a2b66cf13a809134024d6428405cfb2ea545b887f6",
-   "v2_name": "Mopey Frigate j5"
-  },
-  {
-   "address": "Q8c3a468d7d5c45d06570093aa77b6b59a1c37b96",
-   "v2_name": "Thawing Snapper 6k"
-  },
-  {
-   "address": "Qdbd613645f39f7ad5b57b88d883cf410675bceb9da4e63ab5130645738b1f203dbd613645f39f7",
-   "v2_name": "Rowdy Jackdaw f3"
-  },
-  {
-   "address": "Qb65a0752a40ed6c33c03c1447b0a940a977e12ba",
-   "v2_name": "Crusty Ostrich gt"
-  },
-  {
-   "address": "Q9fe0b2fbf0eadbf17d1b6d2b5a863e8d7909792a",
-   "v2_name": "Perky Kingsnake jh"
-  },
-  {
-   "address": "Qa8f56a85c541dd2b48421671e38ff40edbd84e197bea381941beac7ecdf52b90a8f56a85c541dd",
-   "v2_name": "Worried Tortoise wk"
-  },
-  {
-   "address": "Qc2cc1ae19e21ecc963881307e1d18670219894d2",
-   "v2_name": "Posh Stonechat 2s"
-  },
-  {
-   "address": "Qd52ad810e052967d6544c05a3a16a52d41d5597d5e997a259d07fb53eebd1fc0d52ad810e05296",
-   "v2_name": "Dainty Bear kd"
-  },
-  {
-   "address": "Q295a8bddcf2ccde1613a754e4ceb6fa4b170984c",
-   "v2_name": "Splotchy Mamba 5z"
-  },
-  {
    "address": "Q88ff4206f0485c12260f696b43855b86adc6181d2a44d3868141bb2fd9985c3688ff4206f0485c",
    "v2_name": "Elated Tarantula c8"
   },
   {
-   "address": "Q778b37e254d19e5bcf0aeae2dc9fad3f41899c8188f58f135a4ae6a79ec00a8e778b37e254d19e",
-   "v2_name": "Wee Skunk n6"
-  },
-  {
-   "address": "Q5268afdc2d173d31d64cadf9059d7b38fae87b54",
-   "v2_name": "Simple Grouse u8"
-  },
-  {
    "address": "Qc3db193f666a177f1b0a120b32278cf40ac8513de042cf351c4cefede30dbdefc3db193f666a17",
    "v2_name": "Peaceful Wagtail rf"
-  },
-  {
-   "address": "Q2b5d562afb036d446ebeb9d18a04e7eca62588a1",
-   "v2_name": "Pleated Trout jv"
   },
   {
    "address": "Q035dc0a2ac87de593c29e28ede6b9673be14281e20ec26aba509b763fa7254f1035dc0a2ac87de",
@@ -266,20 +70,8 @@
    "v2_name": "Shrewd Lapwing ps"
   },
   {
-   "address": "Qe6bad2e243f5641c378b62ebb16e6bea671a973f",
-   "v2_name": "Squeaky Sidewinder x8"
-  },
-  {
    "address": "Q6bf842a4c606731204faf947511888ce0fa05bfa6f9b2a3a80c82929eeb96fa56bf842a4c60673",
    "v2_name": "Sloppy Wigeon 2j"
-  },
-  {
-   "address": "Q105c488b540de794fc84364f5e54141d2460609c",
-   "v2_name": "Rolling Crossbill rz"
-  },
-  {
-   "address": "Q3c26fa7efe64331b8ebf1c6d7222d2268ed86df6284e83d9ec2e8b55dc1ce1a83c26fa7efe6433",
-   "v2_name": "Pleated Pilchard 8k"
   },
   {
    "address": "Q50aa6a3647d8b39aa9bd7e3ee85d63548238eaa4",
@@ -290,60 +82,8 @@
    "v2_name": "Boastful Wahoo 39"
   },
   {
-   "address": "Q858577040e10a7e6b6519bced9ca8e9f91a81d83d10a98887eb8971c21cf5a6f858577040e10a7",
-   "v2_name": "Bumbling Atlas j5"
-  },
-  {
-   "address": "Q3808fe594c968255db5af6b009cd740ee68bf197",
-   "v2_name": "Humble Manta ve"
-  },
-  {
-   "address": "Q53cdaa2d51e4385bcd6e04031b04b8d327cf9012d31b45f766b34f33af58860453cdaa2d51e438",
-   "v2_name": "Stern Crossbill 8p"
-  },
-  {
    "address": "Q3815c19f76ad4a9d880cf5801a2c52584ef43d57",
    "v2_name": "Jittery Seal rk"
-  },
-  {
-   "address": "Q0fdd938bae77693db587b9451aaf640ddc53ecf950e50faac848345e9ff126450fdd938bae7769",
-   "v2_name": "Honest Grebe 2q"
-  },
-  {
-   "address": "Qa02bdbadc25f2055b218b24271066e9af4687866",
-   "v2_name": "Auburn Pelican mc"
-  },
-  {
-   "address": "Q18dd7ebc6112a2f56c26c0f1faef8a96abede00c",
-   "v2_name": "Elated Bobcat vj"
-  },
-  {
-   "address": "Q05fe1e1c31121816058bd3ee38b6030b058913333f914eb27062acc277b2064705fe1e1c311218",
-   "v2_name": "Squat Okapi n8"
-  },
-  {
-   "address": "Qa0213542465e13a94bfc9c76f16e5ea13047ad77",
-   "v2_name": "Creaking Hoverfly 6z"
-  },
-  {
-   "address": "Qa8a2d0795b2000d1b61ded2e50eae8cd4102c25d0fa5f915e5eebbecf3c5d231a8a2d0795b2000",
-   "v2_name": "Antsy Fieldfare mj"
-  },
-  {
-   "address": "Q654d57ef7330d8e53df9f674e2d10429de3e90a9",
-   "v2_name": "Artful Brill 34"
-  },
-  {
-   "address": "Q339855d4980a45b9900dca217d8945c7dd0857754bcdf2b87ef6d3603d0f03c9339855d4980a45",
-   "v2_name": "Elder Stoat tm"
-  },
-  {
-   "address": "Qd9e33a880ed2b1a18318b1dcfb69ddd54e2bd425e856ca27e42d7739a131efced9e33a880ed2b1",
-   "v2_name": "Whimsical Skylark hy"
-  },
-  {
-   "address": "QC0E6DD0E844E0048DCB0BD3FDCC44A970BECA38D",
-   "v2_name": "Cobalt Caddisfly tk"
   }
  ]
 }

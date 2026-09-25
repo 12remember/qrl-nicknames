@@ -10,11 +10,11 @@ the name of an address you trust:
 
 | What the attacker matches | Addresses to try (on average) |
 |---|---|
-| the two words (`Cobalt Caddisfly`) | ~262,000 |
-| the words and the first two tag characters (`Cobalt Caddisfly tk`) | ~268 million |
-| the full name (`Cobalt Caddisfly tk856`) | ~137 billion |
+| the two words (`Sparkly Kappa`) | ~1 million |
+| the words and the first two tag characters (`Sparkly Kappa tk`) | ~1.1 billion |
+| the full name (`Sparkly Kappa tk856`) | ~550 billion |
 
-The first row takes seconds on a laptop. This is the same "address
+The first row still takes only seconds on a laptop. This is the same "address
 poisoning" risk that affects shortened addresses (`Qc0e6…38d`).
 
 **For anything involving funds, compare the full address, not the name.**
