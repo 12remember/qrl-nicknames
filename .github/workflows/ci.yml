@@ -45,3 +45,33 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: cd python && python -m unittest discover -s tests -v
+
+  # Build both packages the way the release workflow does and install them into
+  # empty projects, so a packaging mistake shows up before a release.
+  packaging:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: npm tarball installs and works
+        run: |
+          mkdir -p dist/npm && (cd js && npm pack --pack-destination ../dist/npm)
+          mkdir app && cd app && npm init -y > /dev/null
+          npm install ../dist/npm/qrl-nicknames-*.tgz
+          node --input-type=module -e '
+            import { nickname } from "qrl-nicknames";
+            const got = nickname("Qc0e6dd0e844e0048dcb0bd3fdcc44a970beca38d");
+            if (got !== "Sparkly Kappa tk856") { console.error(got); process.exit(1); }'
+      - name: Python wheel builds, passes twine and works
+        run: |
+          cp LICENSE python/LICENSE
+          python -m pip install --quiet build twine
+          python -m build python --outdir dist/python
+          python -m twine check --strict dist/python/*
+          python -m venv env && env/bin/pip install --quiet dist/python/*.whl
+          cd / && "$GITHUB_WORKSPACE/env/bin/python" -c 'import qrl_nicknames as q; assert q.nickname("Qc0e6dd0e844e0048dcb0bd3fdcc44a970beca38d") == "Sparkly Kappa tk856"'

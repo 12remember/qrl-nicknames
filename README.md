@@ -28,87 +28,107 @@ ecosystem shows the same name for the same address. It started at
 
 ## Installation
 
-The packages are **not on npm or PyPI yet**, so `npm install qrl-nicknames` and
-`pip install qrl-nicknames` do not work. Use one of the options below. Every
-option gives you exactly the same code and names.
+Every release is published on the
+[releases page](https://github.com/12remember/qrl-nicknames/releases) as a
+ready-made npm package and Python wheel. Install it with one command:
 
-Pin a commit hash (or, once it exists, the tag `v3.0.0`) instead of `main`, so
-that an update never reaches your project unannounced.
+| You use | Run |
+|---|---|
+| npm | `npm install https://github.com/12remember/qrl-nicknames/releases/download/v3.0.0/qrl-nicknames-3.0.0.tgz` |
+| pnpm | `pnpm add https://github.com/12remember/qrl-nicknames/releases/download/v3.0.0/qrl-nicknames-3.0.0.tgz` |
+| yarn | `yarn add qrl-nicknames@https://github.com/12remember/qrl-nicknames/releases/download/v3.0.0/qrl-nicknames-3.0.0.tgz` |
+| pip | `pip install https://github.com/12remember/qrl-nicknames/releases/download/v3.0.0/qrl_nicknames-3.0.0-py3-none-any.whl` |
+
+The version is part of the URL, so your project keeps exactly this version
+until you change the URL. Your `package.json` or `requirements.txt` records
+the URL, so a teammate or CI server gets the same package with a plain
+`npm install` or `pip install -r requirements.txt`.
+
+The packages are not on the npm and PyPI registries yet, so
+`npm install qrl-nicknames` and `pip install qrl-nicknames` do not work yet.
+The files above are the same ones that will be published there.
 
 ### JavaScript / TypeScript
 
-Zero dependencies, synchronous, works in browsers and in Node ≥ 18. Pick one:
+Zero dependencies, synchronous, TypeScript types included. Works in Node ≥ 18,
+in browsers and with every bundler (Vite, webpack, Next.js, esbuild).
 
-**A. Copy the source into your project (simplest, no install step).** The package
-is four self-contained files. Put them in a folder of your own, for example
-`src/vendor/qrl-nicknames/`:
+After installing with one of the commands above:
+
+```js
+import { nickname } from "qrl-nicknames";
+```
+
+The package is an ES module. From CommonJS code, `require("qrl-nicknames")`
+works on Node 20.19+ and 22.12+. On older Node versions, use
+`const { nickname } = await import("qrl-nicknames")`.
+
+**In a browser without a build step,** load it from jsDelivr, which serves
+files straight from this repository:
+
+```html
+<script type="module">
+  import { nickname } from "https://cdn.jsdelivr.net/gh/12remember/qrl-nicknames@v3.0.0/js/src/index.js";
+  console.log(nickname("Qc0e6dd0e844e0048dcb0bd3fdcc44a970beca38d")); // "Sparkly Kappa tk856"
+</script>
+```
+
+Always use a version tag such as `@v3.0.0`, never `@main`. jsDelivr caches
+each file separately, so with `@main` a page can get `index.js` from before a
+change and `wordlists.js` from after it, and show wrong names.
+
+**Copying the files instead of installing** works too. The package is four
+self-contained files:
 
 ```bash
-REF=main   # or a commit hash
 mkdir -p src/vendor/qrl-nicknames && cd src/vendor/qrl-nicknames
 for f in index.js index.d.ts sha256.js wordlists.js; do
-  curl -fsSLO "https://raw.githubusercontent.com/12remember/qrl-nicknames/$REF/js/src/$f"
+  curl -fsSLO "https://raw.githubusercontent.com/12remember/qrl-nicknames/v3.0.0/js/src/$f"
 done
+echo '{"type": "module"}' > package.json
 ```
 
 ```js
 import { nickname } from "./vendor/qrl-nicknames/index.js";
 ```
 
-**B. Install from a local clone.** npm records it as a `file:` dependency, so the
-clone must also exist wherever you build (CI, Docker):
-
-```bash
-git clone https://github.com/12remember/qrl-nicknames.git
-npm install ./qrl-nicknames/js
-```
-
-**C. Install from a tarball.** Build the package once and keep the `.tgz` in
-your project (or host it anywhere):
-
-```bash
-git clone https://github.com/12remember/qrl-nicknames.git
-cd qrl-nicknames/js && npm pack          # writes qrl-nicknames-3.0.0.tgz
-cd /path/to/your-project
-npm install /path/to/qrl-nicknames-3.0.0.tgz
-```
-
-With B and C you import it as `"qrl-nicknames"`, just as you would from npm.
-
-**D. In a browser, without a build step,** load the module from jsDelivr, which
-serves files straight from this repository:
-
-```html
-<script type="module">
-  import { nickname } from "https://cdn.jsdelivr.net/gh/12remember/qrl-nicknames@main/js/src/index.js";
-  console.log(nickname("Qc0e6dd0e844e0048dcb0bd3fdcc44a970beca38d"));
-</script>
-```
-
-`npm install github:12remember/qrl-nicknames` does **not** work: the package
-lives in `js/`, and npm cannot install from a subdirectory of a git repository.
+The one-line `package.json` tells Node that these files are ES modules. Without
+it, a Node project that is not itself `"type": "module"` fails with
+`Named export 'nickname' not found`.
 
 ### Python
 
-Standard library only, Python ≥ 3.9. Pick one:
-
-**A. Install from GitHub with pip.** pip can install from a subdirectory:
+Standard library only, fully typed, Python ≥ 3.9.
 
 ```bash
-pip install "git+https://github.com/12remember/qrl-nicknames.git@main#subdirectory=python"
+pip install https://github.com/12remember/qrl-nicknames/releases/download/v3.0.0/qrl_nicknames-3.0.0-py3-none-any.whl
 ```
 
 In `requirements.txt`:
 
 ```
-qrl-nicknames @ git+https://github.com/12remember/qrl-nicknames.git@main#subdirectory=python
+qrl-nicknames @ https://github.com/12remember/qrl-nicknames/releases/download/v3.0.0/qrl_nicknames-3.0.0-py3-none-any.whl
 ```
 
-**B. Install from a local clone:** `pip install ./qrl-nicknames/python`.
+pip can also build it straight from the git repository:
 
-**C. Copy the source into your project.** Copy the folder
+```bash
+pip install "git+https://github.com/12remember/qrl-nicknames.git@v3.0.0#subdirectory=python"
+```
+
+```python
+from qrl_nicknames import nickname
+```
+
+**Copying the files instead of installing:** copy the folder
 [`python/src/qrl_nicknames/`](python/src/qrl_nicknames) (`__init__.py`,
-`_wordlists.py`, `py.typed`) into your own package and import it from there.
+`_wordlists.py`, `py.typed`) into your own package and import it from there,
+e.g. `from myapp.qrl_nicknames import nickname`.
+
+### From a local clone
+
+To work against a checkout of this repository, install it by path:
+`npm install ./qrl-nicknames/js` or `pip install ./qrl-nicknames/python`.
 
 ### Any other language
 
@@ -233,8 +253,11 @@ spec/v3/
   v2-compat.json        Quantascan v2 names that are still prefixes of their v3 name
   known-issues.json     accepted content-screening findings (none)
   SHA256SUMS            checksums of the files above
-js/                     JavaScript package (not yet on npm, see Installation)
-python/                 Python package (not yet on PyPI, see Installation)
+js/                     JavaScript package
+python/                 Python package
+.github/workflows/
+  ci.yml                checks, tests and a packaging test on every push
+  release.yml           builds, releases and verifies a tagged version
 tools/
   build.mjs             reference implementation; generates vectors and word-list modules
   screen.mjs            content-safety screen over words, tags and 300,000 names

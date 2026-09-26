@@ -40,6 +40,11 @@ First release as a standalone project. Implements **spec v3**.
 - JavaScript package `qrl-nicknames` with a synchronous, dependency-free
   SHA-256, for browsers and Node ≥ 18.
 - Python package `qrl-nicknames`, standard library only, Python ≥ 3.9.
+- Every release is published on GitHub with a ready-made npm tarball and
+  Python wheel, so each package installs with one command. A release workflow
+  builds them from the tag, installs them in every documented way on the oldest
+  and newest supported Node and Python, and only then publishes to npm and PyPI.
+- CI builds and installs both packages on every push.
 - Conformance suite of 174 vectors, including SHA-256 padding boundaries, plus
   3 inputs that must be rejected.
 - Content screen over every word, every one of the 524,288 tags and 300,000

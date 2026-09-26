@@ -1,0 +1,190 @@
+name: release
+
+# Push a tag like v3.0.0 to release. This workflow then:
+#   1. checks that the tag matches every package version and that `make check` passes;
+#   2. builds the npm tarball and the Python wheel + sdist;
+#   3. creates the GitHub release with those files attached;
+#   4. installs the package from the live release in every documented way;
+#   5. publishes to npm and PyPI, if enabled (repository variables NPM_PUBLISH
+#      and PYPI_PUBLISH set to "true"; see VERSIONING.md for the one-time setup).
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+env:
+  EXAMPLE_ADDRESS: Qc0e6dd0e844e0048dcb0bd3fdcc44a970beca38d
+  EXAMPLE_NAME: Sparkly Kappa tk856
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Tag matches every package version
+        run: |
+          v="${GITHUB_REF_NAME#v}"
+          js=$(node -p 'require("./js/package.json").version')
+          [ "$js" = "$v" ] || { echo "js/package.json is $js, tag is $v"; exit 1; }
+          grep -qx "version = \"$v\"" python/pyproject.toml || { echo "python/pyproject.toml is not $v"; exit 1; }
+          grep -qx "__version__ = \"$v\"" python/src/qrl_nicknames/__init__.py || { echo "__version__ is not $v"; exit 1; }
+      - name: Full check
+        run: make check PYTHON=python
+      - name: Build the npm tarball
+        run: mkdir -p dist/npm && cd js && npm pack --pack-destination ../dist/npm
+      - name: Build the Python wheel and sdist
+        run: |
+          cp LICENSE python/LICENSE
+          python -m pip install --quiet build twine
+          python -m build python --outdir dist/python
+          python -m twine check --strict dist/python/*
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  github-release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+      - name: Create the release with the packages attached
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          v="${GITHUB_REF_NAME#v}"
+          base="https://github.com/$GITHUB_REPOSITORY/releases/download/$GITHUB_REF_NAME"
+          cat > notes.md <<EOF
+          Spec v3 names. See [CHANGELOG.md](https://github.com/$GITHUB_REPOSITORY/blob/$GITHUB_REF_NAME/CHANGELOG.md).
+
+          **JavaScript / TypeScript**
+
+          \`\`\`bash
+          npm install $base/qrl-nicknames-$v.tgz
+          \`\`\`
+
+          **Python**
+
+          \`\`\`bash
+          pip install $base/qrl_nicknames-$v-py3-none-any.whl
+          \`\`\`
+          EOF
+          gh release create "$GITHUB_REF_NAME" dist/npm/* dist/python/* \
+            --repo "$GITHUB_REPOSITORY" --title "$GITHUB_REF_NAME" --notes-file notes.md
+
+  # Install from the live release exactly as the README tells people to, on the
+  # oldest and newest supported runtimes. Nothing is published to a registry
+  # unless this passes.
+  smoke:
+    needs: github-release
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - node: 18
+            python: "3.9"
+          - node: 24
+            python: "3.13"
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: npm install from the release tarball
+        run: |
+          v="${GITHUB_REF_NAME#v}"
+          mkdir npm-app && cd npm-app && npm init -y > /dev/null
+          npm install "https://github.com/$GITHUB_REPOSITORY/releases/download/$GITHUB_REF_NAME/qrl-nicknames-$v.tgz"
+          node --input-type=module -e '
+            import { nickname } from "qrl-nicknames";
+            const got = nickname(process.env.EXAMPLE_ADDRESS);
+            if (got !== process.env.EXAMPLE_NAME) { console.error(got); process.exit(1); }
+            console.log("npm tarball:", got);'
+      - name: Copy the source files from the tag
+        run: |
+          mkdir -p copy/vendor/qrl-nicknames && cd copy/vendor/qrl-nicknames
+          for f in index.js index.d.ts sha256.js wordlists.js; do
+            curl -fsSLO "https://raw.githubusercontent.com/$GITHUB_REPOSITORY/$GITHUB_REF_NAME/js/src/$f"
+          done
+          echo '{"type": "module"}' > package.json
+          cd ../.. && node --input-type=module -e '
+            import { nickname } from "./vendor/qrl-nicknames/index.js";
+            const got = nickname(process.env.EXAMPLE_ADDRESS);
+            if (got !== process.env.EXAMPLE_NAME) { console.error(got); process.exit(1); }
+            console.log("copied files:", got);'
+      - name: jsDelivr serves the tag
+        run: |
+          mkdir cdn && cd cdn
+          for f in index.js sha256.js wordlists.js; do
+            curl -fsSLO "https://cdn.jsdelivr.net/gh/$GITHUB_REPOSITORY@$GITHUB_REF_NAME/js/src/$f"
+          done
+          echo '{"type": "module"}' > package.json
+          node --input-type=module -e '
+            import { nickname } from "./index.js";
+            const got = nickname(process.env.EXAMPLE_ADDRESS);
+            if (got !== process.env.EXAMPLE_NAME) { console.error(got); process.exit(1); }
+            console.log("jsDelivr:", got);'
+      - name: pip install from the release wheel
+        run: |
+          v="${GITHUB_REF_NAME#v}"
+          python -m venv wheel-env
+          wheel-env/bin/pip install --quiet "https://github.com/$GITHUB_REPOSITORY/releases/download/$GITHUB_REF_NAME/qrl_nicknames-$v-py3-none-any.whl"
+          wheel-env/bin/python -c 'import os, qrl_nicknames as q; got = q.nickname(os.environ["EXAMPLE_ADDRESS"]); assert got == os.environ["EXAMPLE_NAME"], got; print("wheel:", got)'
+      - name: pip install from git
+        run: |
+          python -m venv git-env
+          git-env/bin/pip install --quiet "git+https://github.com/$GITHUB_REPOSITORY.git@$GITHUB_REF_NAME#subdirectory=python"
+          git-env/bin/python -c 'import os, qrl_nicknames as q; got = q.nickname(os.environ["EXAMPLE_ADDRESS"]); assert got == os.environ["EXAMPLE_NAME"], got; print("git:", got)'
+
+  publish-npm:
+    needs: smoke
+    if: vars.NPM_PUBLISH == 'true'
+    runs-on: ubuntu-latest
+    environment: npm
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+      # Trusted publishing (no token) needs npm >= 11.5.1.
+      - run: npm install --global npm@latest
+      - run: npm publish dist/npm/*.tgz --access public
+
+  publish-pypi:
+    needs: smoke
+    if: vars.PYPI_PUBLISH == 'true'
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: dist/python/

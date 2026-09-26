@@ -3,15 +3,17 @@
 Readable, deterministic names for QRL addresses. Same address, same name,
 in every project. Implements [spec v3](https://github.com/12remember/qrl-nicknames/blob/main/SPEC.md).
 
-> **Not on PyPI yet.** `pip install qrl-nicknames` does not work until the
-> package is published. Install it from GitHub instead:
->
-> ```bash
-> pip install "git+https://github.com/12remember/qrl-nicknames.git@main#subdirectory=python"
-> ```
->
-> See [Installation](https://github.com/12remember/qrl-nicknames#installation)
-> for other options.
+## Install
+
+```bash
+pip install https://github.com/12remember/qrl-nicknames/releases/download/v3.0.0/qrl_nicknames-3.0.0-py3-none-any.whl
+```
+
+The package is not on PyPI yet, so `pip install qrl-nicknames` does not work
+yet. For `requirements.txt`, installing from git and copying the files, see
+[Installation](https://github.com/12remember/qrl-nicknames#installation).
+
+## Use
 
 ```python
 from qrl_nicknames import nickname

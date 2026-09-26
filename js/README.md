@@ -3,10 +3,18 @@
 Readable, deterministic names for QRL addresses. Same address, same name,
 in every project. Implements [spec v3](https://github.com/12remember/qrl-nicknames/blob/main/SPEC.md).
 
-> **Not on npm yet.** `npm install qrl-nicknames` does not work until the
-> package is published. Copy `js/src/`, install from a clone
-> (`npm install ./qrl-nicknames/js`) or from a tarball made with `npm pack`.
-> See [Installation](https://github.com/12remember/qrl-nicknames#installation).
+## Install
+
+```bash
+npm install https://github.com/12remember/qrl-nicknames/releases/download/v3.0.0/qrl-nicknames-3.0.0.tgz
+```
+
+Works the same with `pnpm add <url>` and `yarn add qrl-nicknames@<url>`. The
+package is not on the npm registry yet, so `npm install qrl-nicknames` does not
+work yet. For browsers without a build step and for copying the files, see
+[Installation](https://github.com/12remember/qrl-nicknames#installation).
+
+## Use
 
 ```js
 import { nickname } from "qrl-nicknames";
